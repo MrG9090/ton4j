@@ -1,13 +1,6 @@
 package org.ton.ton4j.toncenter;
 
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.codec.DecoderException;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.ton.ton4j.toncenter.model.*;
-import org.ton.ton4j.utils.Utils;
-
+import static org.junit.Assert.*;
 import static org.ton.ton4j.toncenter.model.CommonResponses.*;
 
 import java.math.BigInteger;
@@ -16,8 +9,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
-
-import static org.junit.Assert.*;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.DecoderException;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.ton.ton4j.toncenter.model.*;
+import org.ton.ton4j.utils.Utils;
 
 /**
  * Comprehensive test class for TonCenter API wrapper covering all 27 endpoints Rate limited to
@@ -418,7 +416,7 @@ public class TonCenterTest {
 
     try {
       TonResponse<LookupBlockResponse> response =
-          client.lookupBlockBySeqno(-1, -9223372036854775808L, 1000L);
+          client.lookupBlockBySeqno(-1, -9223372036854775808L, 63272772L);
       log.info("response {}", response.getResult());
       assertTrue("Lookup block should be successful", response.isSuccess());
       assertNotNull("Block lookup result should not be null", response.getResult());
@@ -462,11 +460,12 @@ public class TonCenterTest {
 
     try {
       TonResponse<BlockTransactionsResponse> response =
-          client.getBlockTransactions(-1, -9223372036854775808L, 1000L);
+          client.getBlockTransactions(0, -9223372036854775808L, 63272772L);
       log.info("response {}", response.getResult());
       assertTrue("Block transactions should be successful", response.isSuccess());
       assertNotNull("Block transactions should not be null", response.getResult());
       log.info("Block transactions retrieved successfully");
+      response.getResult().getTransactions().forEach(tx -> log.info("Transaction: {}", tx));
     } finally {
       client.close();
     }
@@ -692,21 +691,21 @@ public class TonCenterTest {
     }
   }
 
-//  @Test
-//  public void testGetSubWalletId() {
-//    enforceRateLimit();
-//    TonCenter client = TonCenter.builder().apiKey(apiKey).network(network).build();
-//
-//    try {
-//      // Test calling seqno method on a wallet
-//      long subWalletId = client.getSubWalletId(tonWallet);
-//      log.info("subWalletId {}", subWalletId);
-//      assertTrue(subWalletId >= 0);
-//      log.info("Get method 'get_subwallet_id' executed successfully");
-//    } finally {
-//      client.close();
-//    }
-//  }
+  //  @Test
+  //  public void testGetSubWalletId() {
+  //    enforceRateLimit();
+  //    TonCenter client = TonCenter.builder().apiKey(apiKey).network(network).build();
+  //
+  //    try {
+  //      // Test calling seqno method on a wallet
+  //      long subWalletId = client.getSubWalletId(tonWallet);
+  //      log.info("subWalletId {}", subWalletId);
+  //      assertTrue(subWalletId >= 0);
+  //      log.info("Get method 'get_subwallet_id' executed successfully");
+  //    } finally {
+  //      client.close();
+  //    }
+  //  }
 
   @Test
   public void testGetPublicKey() {

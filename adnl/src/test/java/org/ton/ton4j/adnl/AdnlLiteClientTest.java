@@ -21,6 +21,7 @@ import org.ton.ton4j.tl.liteserver.responses.AccountState;
 import org.ton.ton4j.tl.liteserver.responses.AllShardsInfo;
 import org.ton.ton4j.tl.liteserver.responses.BlockData;
 import org.ton.ton4j.tl.liteserver.responses.BlockHeader;
+import org.ton.ton4j.tl.liteserver.responses.BlockId;
 import org.ton.ton4j.tlb.*;
 import org.ton.ton4j.tlb.print.TransactionPrintInfo;
 import org.ton.ton4j.utils.Utils;
@@ -37,13 +38,13 @@ public class AdnlLiteClientTest {
 
   private static AdnlLiteClient client;
   private LiteClientConnectionPool pool;
-  private static final boolean mainnet = false;
+  private static final boolean mainnet = true;
 
   @BeforeAll
   static void tearBeforeAll() throws Exception {
 
     if (mainnet) {
-      client = AdnlLiteClient.builder().mainnet().build();
+      client = AdnlLiteClient.builder().mainnet().liteServerIndex(2).build();
     } else {
       client = AdnlLiteClient.builder().testnet().liteServerIndex(2).build();
     }
@@ -775,6 +776,36 @@ public class AdnlLiteClientTest {
 
     BlockHeader blockHeader = client.lookupBlock(masterchainInfo.getLast().getBlockId(), 1, 0, 0);
     log.info("blockHeader {}", blockHeader);
+  }
+
+  @Test
+  void testLookupBlockBySeqno() throws Exception {
+    log.info("Testing lookupBlock query");
+    assertTrue(client.isConnected(), "Client should be connected");
+
+    int blockSeqno = 63272772;
+
+    BlockHeader blockHeader =
+        client.lookupBlock(
+            BlockId.builder().workchain(0).shard(0x8000000000000000L).seqno(blockSeqno).build(),
+            1,
+            0,
+            0);
+    log.info("blockHeader {}", blockHeader);
+
+    BlockTransactions blockTransactions =
+        client.listBlockTransactions(blockHeader.getId(), 1, 100, null);
+    log.info("blockTransactions {}", blockTransactions);
+    log.info("blockTransactions size {}", blockTransactions.getTransactionIds().size());
+    for (TransactionId txId : blockTransactions.getTransactionIds()) {
+      log.info("txId {}", txId);
+      for (Transaction tx :
+          client
+              .getTransactions(Address.of("0:" + txId.getAccount()), 0L, null, 10)
+              .getTransactionsParsed()) {
+        log.info("tx {}", tx);
+      }
+    }
   }
 
   @Test

@@ -350,6 +350,47 @@ public class TestTonlibJson {
   }
 
   @Test
+  public void testTonlibGetAllBlockTransactionsBySeqno() {
+
+    Tonlib tonlib =
+        Tonlib.builder()
+            .pathToTonlibSharedLib(tonlibPath)
+            .testnet(false)
+            .receiveRetryTimes(15)
+            .build();
+
+    BlockIdExt fullblock = tonlib.lookupBlock(63272772, -1, -9223372036854775808L, 0, 0);
+    assertThat(fullblock).isNotNull();
+
+    log.info(fullblock.toString());
+
+    Map<String, RawTransactions> txs = tonlib.getAllBlockTransactions(fullblock, 100, null);
+    for (Map.Entry<String, RawTransactions> entry : txs.entrySet()) {
+      for (RawTransaction tx : entry.getValue().getTransactions()) {
+        if (nonNull(tx.getIn_msg())
+            && (!tx.getIn_msg().getSource().getAccount_address().equals(""))) {
+          log.info(
+              "{} <<<<< {} : {} ",
+              tx.getIn_msg().getSource().getAccount_address(),
+              tx.getIn_msg().getDestination().getAccount_address(),
+              Utils.formatNanoValue(tx.getIn_msg().getValue(), 9));
+        }
+        if (nonNull(tx.getOut_msgs())) {
+          for (RawMessage msg : tx.getOut_msgs()) {
+            log.info(
+                "{} >>>>> {} : {} ",
+                msg.getSource().getAccount_address(),
+                msg.getDestination().getAccount_address(),
+                Utils.formatNanoValue(msg.getValue()));
+          }
+        }
+      }
+    }
+    tonlib.destroy();
+    assertThat(txs.size()).isNotEqualTo(0);
+  }
+
+  @Test
   public void testTonlibAccountState() {
     Tonlib tonlib =
         Tonlib.builder()

@@ -256,7 +256,7 @@ public class Cell implements Serializable {
         }
         off = hashIndex - hashIndexOffset - 1;
         byte[] partHash = new byte[32];
-        System.arraycopy(hashes, off * 32, partHash, 0, (off + 1) * 32);
+        System.arraycopy(hashes, off * 32, partHash, 0, 32);
         hash = Utils.concatBytes(hash, partHash);
       }
 
