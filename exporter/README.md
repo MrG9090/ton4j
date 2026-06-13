@@ -10,7 +10,7 @@ on your host.
 <dependency>
     <groupId>org.ton.ton4j</groupId>
     <artifactId>exporter</artifactId>
-    <version>2.0.3</version>
+    <version>2.1.0</version>
 </dependency>
 ```
 
@@ -21,7 +21,7 @@ on your host.
 <dependency>
     <groupId>org.ton.ton4j</groupId>
     <artifactId>exporter</artifactId>
-    <version>2.0.3</version>
+    <version>2.1.0</version>
 </dependency>
 ```
 
