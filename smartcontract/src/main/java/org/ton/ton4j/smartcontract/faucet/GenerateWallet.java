@@ -15,13 +15,13 @@ import org.ton.ton4j.utils.Utils;
 public class GenerateWallet {
 
   /**
-   * Creates and tops up V3R1 wallet with initialBalanceInToncoins and walletId=42 in testnet
+   * Creates and tops up V3R1 wallet with initialBalanceInGrams and walletId=42 in testnet
    *
    * @param tonProvider instance of Tonlib, AdnlLiteClient or TonCenter
-   * @param initialBalanceInToncoins must not be zero
+   * @param initialBalanceInGrams must not be zero
    * @return instance of WalletV3R1
    */
-  public static WalletV3R1 randomV3R1(TonProvider tonProvider, long initialBalanceInToncoins) {
+  public static WalletV3R1 randomV3R1(TonProvider tonProvider, long initialBalanceInGrams) {
     log.info("generating WalletV3R1 wallet...");
 
     WalletV3R1 wallet = WalletV3R1.builder().tonProvider(tonProvider).wc(0).walletId(42).build();
@@ -43,7 +43,7 @@ public class GenerateWallet {
           TestnetFaucet.topUpContract(
               tonProvider,
               Address.of(nonBounceableAddress),
-              Utils.toNano(initialBalanceInToncoins));
+              Utils.toNano(initialBalanceInGrams));
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
@@ -55,13 +55,13 @@ public class GenerateWallet {
   }
 
   /**
-   * Creates and tops up V3R1 wallet with initialBalanceInToncoins and walletId=42 in testnet
+   * Creates and tops up V3R1 wallet with initialBalanceInGrams and walletId=42 in testnet
    *
    * @param tonProvider instance of Tonlib, AdnlLiteClient or TonCenter
-   * @param initialBalanceInToncoins must not be zero
+   * @param initialBalanceInGrams must not be zero
    * @return instance of WalletV3R1
    */
-  public static WalletV4R2 randomV4R2(TonProvider tonProvider, long initialBalanceInToncoins) {
+  public static WalletV4R2 randomV4R2(TonProvider tonProvider, long initialBalanceInGrams) {
     log.info("generating WalletV4R2 wallet...");
 
     WalletV4R2 wallet = WalletV4R2.builder().tonProvider(tonProvider).wc(0).walletId(42).build();
@@ -83,7 +83,7 @@ public class GenerateWallet {
               TestnetFaucet.topUpContract(
                       tonProvider,
                       Address.of(nonBounceableAddress),
-                      Utils.toNano(initialBalanceInToncoins));
+                      Utils.toNano(initialBalanceInGrams));
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
@@ -95,7 +95,7 @@ public class GenerateWallet {
   }
 
   public static HighloadWalletV3 randomHighloadV3R1(
-      TonProvider tonProvider, long initialBalanceInToncoins) {
+      TonProvider tonProvider, long initialBalanceInGrams) {
 
     log.info("generating HighloadWalletV3 wallet...");
     HighloadWalletV3 wallet =
@@ -119,7 +119,7 @@ public class GenerateWallet {
           TestnetFaucet.topUpContract(
               tonProvider,
               Address.of(nonBounceableAddress),
-              Utils.toNano(initialBalanceInToncoins));
+              Utils.toNano(initialBalanceInGrams));
     } catch (Exception e) {
       throw new RuntimeException(e);
     }

@@ -260,7 +260,7 @@ public class WalletV4R2 implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to destination address using auto-fetched seqno without the body
+   * Sends amount of nanograms to destination address using auto-fetched seqno without the body
    * and default send-mode 3
    *
    * @param config WalletV4R2Config
@@ -712,7 +712,7 @@ public class WalletV4R2 implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to destination address and waits till message found among
+   * Sends amount of nanograms to destination address and waits till message found among
    * account's transactions
    */
   public Transaction sendWithConfirmation(WalletV4R2Config config) throws Exception {

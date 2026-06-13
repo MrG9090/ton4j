@@ -58,16 +58,16 @@ public class MessageFees {
         .format(LocalDateTime.ofEpochSecond(timestamp, 0, ZoneOffset.UTC));
   }
 
-  public String formatNanoValueZero(BigInteger nanoCoins) {
-    if (isNull(nanoCoins)) {
+  public String formatNanoValueZero(BigInteger nanograms) {
+    if (isNull(nanograms)) {
       return "N/A";
     }
-    if (nanoCoins.compareTo(BigInteger.ZERO) == 0) {
+    if (nanograms.compareTo(BigInteger.ZERO) == 0) {
       return "0";
     } else {
       return String.format(
           "%,.9f",
-          new BigDecimal(nanoCoins)
+          new BigDecimal(nanograms)
               .divide(BigDecimal.valueOf(1_000_000_000), 9, RoundingMode.HALF_UP));
     }
   }

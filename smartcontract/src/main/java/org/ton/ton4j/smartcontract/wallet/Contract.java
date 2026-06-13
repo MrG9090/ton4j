@@ -271,7 +271,7 @@ public interface Contract {
 
   /**
    * Checks every second for timeoutSeconds if account balance was changed. Notice, storage fee
-   * often changes by 1 nanocoin with a few seconds, if you need to tolerate that consider using
+   * often changes by 1 nanogram with a few seconds, if you need to tolerate that consider using
    * waitForBalanceChangeWithTolerance().
    */
   default void waitForBalanceChange(int timeoutSeconds) {
@@ -290,7 +290,7 @@ public interface Contract {
 
   /**
    * Checks every second for 60 seconds if an account balance was changed with comparison to the initial balance. Notice, the storage fee
-   * often changes by 1 nanocoin with a few seconds, if you need to tolerate that consider using
+   * often changes by 1 nanogram with a few seconds, if you need to tolerate that consider using
    * waitForBalanceChangeWithTolerance().
    */
   default void waitForBalanceChange(BigInteger initialBalance) {
@@ -299,7 +299,7 @@ public interface Contract {
 
   /**
    * Checks every second for timeoutSeconds if the account balance was changed with comparison to the initial balance. Notice, the storage fee
-   * often changes by 1 nanocoin with a few seconds, if you need to tolerate that consider using
+   * often changes by 1 nanogram with a few seconds, if you need to tolerate that consider using
    * waitForBalanceChangeWithTolerance().
    */
   default void waitForBalanceChange(BigInteger initialBalance, int timeoutSeconds) {
@@ -316,23 +316,23 @@ public interface Contract {
   }
 
   /**
-   * returns if balance has changed by +/- tolerateNanoCoins within 60 seconds, otherwise throws an
+   * returns if balance has changed by +/- tolerateNanograms within 60 seconds, otherwise throws an
    * error.
    *
-   * @param tolerateNanoCoins tolerate value
+   * @param tolerateNanograms tolerate value
    */
-  default void waitForBalanceChangeWithTolerance(BigInteger tolerateNanoCoins) {
-    waitForBalanceChangeWithTolerance(60, tolerateNanoCoins);
+  default void waitForBalanceChangeWithTolerance(BigInteger tolerateNanograms) {
+    waitForBalanceChangeWithTolerance(60, tolerateNanograms);
   }
 
   /**
-   * returns if balance has changed by +/- tolerateNanoCoins within timeoutSeconds, otherwise throws
+   * returns if balance has changed by +/- tolerateNanograms within timeoutSeconds, otherwise throws
    * an error.
    *
    * @param timeoutSeconds timeout in seconds
-   * @param tolerateNanoCoins tolerate value
+   * @param tolerateNanograms tolerate value
    */
-  default void waitForBalanceChangeWithTolerance(int timeoutSeconds, BigInteger tolerateNanoCoins) {
+  default void waitForBalanceChangeWithTolerance(int timeoutSeconds, BigInteger tolerateNanograms) {
 
     BigInteger initialBalance = getBalance();
     long diff;
@@ -347,7 +347,7 @@ public interface Contract {
       diff =
           Math.max(currentBalance.longValue(), initialBalance.longValue())
               - Math.min(currentBalance.longValue(), initialBalance.longValue());
-    } while (diff < tolerateNanoCoins.longValue());
+    } while (diff < tolerateNanograms.longValue());
   }
 
   default BigInteger getBalance() {
@@ -503,7 +503,7 @@ public interface Contract {
   default BigInteger getGasFees() {
     switch (getName()) {
       case "V1R1":
-        return BigInteger.valueOf(40000); // 0.00004 toncoins
+        return BigInteger.valueOf(40000); // 0.00004 grams
       case "V1R2":
         return BigInteger.valueOf(40000);
       case "V1R3":

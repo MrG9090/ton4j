@@ -628,7 +628,7 @@ public class TestHighloadWalletV3 extends CommonTest {
 
         // top up new wallet using test-faucet-wallet
         BigInteger balance = TestnetFaucet.topUpContract(tonlib, Address.of(nonBounceableAddress), Utils.toNano(1));
-        log.info("new wallet {} toncoins balance: {}",
+        log.info("new wallet {} grams balance: {}",
                 myHighLoadWalletV3.getName(),
                 Utils.formatNanoValue(balance));
 
@@ -688,7 +688,7 @@ public class TestHighloadWalletV3 extends CommonTest {
 
         BigInteger balanceOfDestinationWallet =
                 tonlib.getAccountBalance(Address.of(singleRandomAddress));
-        log.info("balanceOfDestinationWallet in nanocoins: {}", balanceOfDestinationWallet);
+        log.info("balanceOfDestinationWallet in nanograms: {}", balanceOfDestinationWallet);
 
         JettonWallet randomJettonWallet =
                 jettonMinterWallet.getJettonWallet(Address.of(singleRandomAddress));
@@ -733,7 +733,7 @@ public class TestHighloadWalletV3 extends CommonTest {
         BigInteger balance =
                 TestnetFaucet.topUpContract(tonCenter, Address.of(nonBounceableAddress), Utils.toNano(1));
         log.info(
-                "new wallet {} toncoins balance: {}",
+                "new wallet {} grams balance: {}",
                 myHighLoadWalletV3.getName(),
                 Utils.formatNanoValue(balance));
 
@@ -795,7 +795,7 @@ public class TestHighloadWalletV3 extends CommonTest {
         Utils.sleep(60, "sending jettons...");
 
         BigInteger balanceOfDestinationWallet = tonCenter.getBalance(singleRandomAddress);
-        log.info("balanceOfDestinationWallet in nanocoins: {}", balanceOfDestinationWallet);
+        log.info("balanceOfDestinationWallet in nanograms: {}", balanceOfDestinationWallet);
 
         JettonWallet randomJettonWallet =
                 jettonMinterWallet.getJettonWallet(Address.of(singleRandomAddress));

@@ -1022,12 +1022,12 @@ public class Utils {
   }
 
   public static BigInteger toUsdt(long usdt) {
-    checkToncoinsOverflow(BigInteger.valueOf(usdt).multiply(BI_MIO1));
+    checkGramsOverflow(BigInteger.valueOf(usdt).multiply(BI_MIO1));
     return BigInteger.valueOf(usdt).multiply(BI_MIO1);
   }
 
   public static BigInteger toUsdt(String usdt) {
-    checkToncoinsOverflow(new BigDecimal(usdt).multiply(BD_MIO1).toBigInteger());
+    checkGramsOverflow(new BigDecimal(usdt).multiply(BD_MIO1).toBigInteger());
 
     if (usdt.matches("^\\d*\\.\\d+|\\d+\\.\\d*$")) {
       return new BigDecimal(usdt).multiply(BigDecimal.valueOf(MIO1)).toBigInteger();
@@ -1037,7 +1037,7 @@ public class Utils {
   }
 
   public static BigInteger toUsdt(double usdt) {
-    checkToncoinsOverflow(
+    checkGramsOverflow(
             BigDecimal.valueOf(usdt).multiply(BigDecimal.valueOf(MIO1)).toBigInteger());
     if (BigDecimal.valueOf(usdt).scale() > 6) {
       throw new Error("Round the number to 6 decimals first");
@@ -1046,7 +1046,7 @@ public class Utils {
   }
 
   public static BigInteger toUsdt(float usdt) {
-    checkToncoinsOverflow(
+    checkGramsOverflow(
             BigDecimal.valueOf(usdt).multiply(BigDecimal.valueOf(MIO1)).toBigInteger());
     if (BigDecimal.valueOf(usdt).scale() > 6) {
       throw new Error("Round the number to 6 decimals first");
@@ -1055,7 +1055,7 @@ public class Utils {
   }
 
   public static BigInteger toUsdt(BigDecimal usdt) {
-    checkToncoinsOverflow(usdt.multiply(BigDecimal.valueOf(MIO1)).toBigInteger());
+    checkGramsOverflow(usdt.multiply(BigDecimal.valueOf(MIO1)).toBigInteger());
     if (usdt.scale() > 6) {
       throw new Error("Round the number to 6 decimals first");
     }
@@ -1063,107 +1063,107 @@ public class Utils {
   }
   // end toUsdt
 
-  // convert to nanocoins
-  public static BigInteger toNano(double toncoins, Integer precision) {
-    return BigDecimal.valueOf(toncoins).multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
+  // convert to nanograms
+  public static BigInteger toNano(double grams, Integer precision) {
+    return BigDecimal.valueOf(grams).multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
   }
 
-  public static BigInteger toNano(BigDecimal toncoins, Integer precision) {
-    return toncoins.multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
+  public static BigInteger toNano(BigDecimal grams, Integer precision) {
+    return grams.multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
   }
 
-  public static BigInteger toNano(String toncoins, Integer precision) {
-    return new BigDecimal(toncoins).multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
+  public static BigInteger toNano(String grams, Integer precision) {
+    return new BigDecimal(grams).multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
   }
 
-  public static BigInteger toNano(long toncoins, Integer precision) {
-    return new BigDecimal(toncoins).multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
+  public static BigInteger toNano(long grams, Integer precision) {
+    return new BigDecimal(grams).multiply(BigDecimal.TEN.pow(precision)).toBigInteger();
   }
 
-  public static BigInteger toNano(long toncoins) {
-    checkToncoinsOverflow(BigInteger.valueOf(toncoins).multiply(BI_BLN1));
-    return BigInteger.valueOf(toncoins).multiply(BI_BLN1);
+  public static BigInteger toNano(long grams) {
+    checkGramsOverflow(BigInteger.valueOf(grams).multiply(BI_BLN1));
+    return BigInteger.valueOf(grams).multiply(BI_BLN1);
   }
 
-  public static BigInteger toNano(String toncoins) {
-    checkToncoinsOverflow(new BigDecimal(toncoins).multiply(BD_BLN1).toBigInteger());
+  public static BigInteger toNano(String grams) {
+    checkGramsOverflow(new BigDecimal(grams).multiply(BD_BLN1).toBigInteger());
 
-    if (toncoins.matches("^\\d*\\.\\d+|\\d+\\.\\d*$")) {
-      return new BigDecimal(toncoins).multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
+    if (grams.matches("^\\d*\\.\\d+|\\d+\\.\\d*$")) {
+      return new BigDecimal(grams).multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
     } else {
-      return new BigInteger(toncoins).multiply(BigInteger.valueOf(BLN1));
+      return new BigInteger(grams).multiply(BigInteger.valueOf(BLN1));
     }
   }
 
-  public static BigInteger toNano(double toncoins) {
-    checkToncoinsOverflow(
-            BigDecimal.valueOf(toncoins).multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
-    if (BigDecimal.valueOf(toncoins).scale() > 9) {
+  public static BigInteger toNano(double grams) {
+    checkGramsOverflow(
+            BigDecimal.valueOf(grams).multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
+    if (BigDecimal.valueOf(grams).scale() > 9) {
       throw new Error("Round the number to 9 decimals first");
     }
-    return BigDecimal.valueOf(toncoins).multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
+    return BigDecimal.valueOf(grams).multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
   }
 
-  public static BigInteger toNano(float toncoins) {
-    checkToncoinsOverflow(
-            BigDecimal.valueOf(toncoins).multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
-    if (BigDecimal.valueOf(toncoins).scale() > 9) {
+  public static BigInteger toNano(float grams) {
+    checkGramsOverflow(
+            BigDecimal.valueOf(grams).multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
+    if (BigDecimal.valueOf(grams).scale() > 9) {
       throw new Error("Round the number to 9 decimals first");
     }
-    return BigDecimal.valueOf(toncoins).multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
+    return BigDecimal.valueOf(grams).multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
   }
 
-  public static BigInteger toNano(BigDecimal toncoins) {
-    checkToncoinsOverflow(toncoins.multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
-    if (toncoins.scale() > 9) {
+  public static BigInteger toNano(BigDecimal grams) {
+    checkGramsOverflow(grams.multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
+    if (grams.scale() > 9) {
       throw new Error("Round the number to 9 decimals first");
     }
-    return toncoins.multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
+    return grams.multiply(BigDecimal.valueOf(BLN1)).toBigInteger();
   }
   // end toNano
 
-  // parsing nanocoins
-  public static BigDecimal fromNano(BigInteger nanoCoins, Integer precision) {
-    return new BigDecimal(nanoCoins)
+  // parsing nanograms
+  public static BigDecimal fromNano(BigInteger nanograms, Integer precision) {
+    return new BigDecimal(nanograms)
         .divide(BigDecimal.TEN.pow(precision), precision, RoundingMode.FLOOR);
   }
 
-  public static BigDecimal fromNano(BigDecimal nanoCoins, Integer precision) {
-    return nanoCoins.divide(BigDecimal.TEN.pow(precision), precision, RoundingMode.FLOOR);
+  public static BigDecimal fromNano(BigDecimal nanograms, Integer precision) {
+    return nanograms.divide(BigDecimal.TEN.pow(precision), precision, RoundingMode.FLOOR);
   }
 
-  public static BigDecimal fromNano(String nanoCoins, Integer precision) {
-    return new BigDecimal(nanoCoins)
+  public static BigDecimal fromNano(String nanograms, Integer precision) {
+    return new BigDecimal(nanograms)
         .divide(BigDecimal.TEN.pow(precision), precision, RoundingMode.FLOOR);
   }
 
-  public static BigDecimal fromNano(long nanoCoins, Integer precision) {
-    return new BigDecimal(nanoCoins)
+  public static BigDecimal fromNano(long nanograms, Integer precision) {
+    return new BigDecimal(nanograms)
         .divide(BigDecimal.TEN.pow(precision), precision, RoundingMode.FLOOR);
   }
 
-  public static BigDecimal fromNano(BigInteger nanoCoins) {
-    checkToncoinsOverflow(nanoCoins);
-    return new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP);
+  public static BigDecimal fromNano(BigInteger nanograms) {
+    checkGramsOverflow(nanograms);
+    return new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP);
   }
 
-  public static BigDecimal fromNano(String nanoCoins) {
-    checkToncoinsOverflow(new BigInteger(nanoCoins));
-    return new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP);
+  public static BigDecimal fromNano(String nanograms) {
+    checkGramsOverflow(new BigInteger(nanograms));
+    return new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP);
   }
 
-  public static BigDecimal fromNano(long nanoCoins) {
-    checkToncoinsOverflow(BigInteger.valueOf(nanoCoins));
-    return new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP);
+  public static BigDecimal fromNano(long nanograms) {
+    checkGramsOverflow(BigInteger.valueOf(nanograms));
+    return new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP);
   }
 
-  // formating nanocoins and usdt
-  public static String formatCoins(BigDecimal toncoins) {
-    checkToncoinsOverflow(toncoins.multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
-    if (toncoins.scale() > 9) {
+  // formating nanograms and usdt
+  public static String formatCoins(BigDecimal grams) {
+    checkGramsOverflow(grams.multiply(BigDecimal.valueOf(BLN1)).toBigInteger());
+    if (grams.scale() > 9) {
       throw new Error("Round the number to 9 decimals first");
     }
-    return String.format("%,.9f", toncoins.multiply(BigDecimal.valueOf(BLN1)));
+    return String.format("%,.9f", grams.multiply(BigDecimal.valueOf(BLN1)));
   }
 
   public static String formatUsdt(BigDecimal usdt) {
@@ -1173,8 +1173,8 @@ public class Utils {
     return String.format("%,.6f", usdt.multiply(BigDecimal.valueOf(MIO1)));
   }
 
-  public static String formatCoins(String toncoins) {
-    BigInteger nano = toNano(toncoins);
+  public static String formatCoins(String grams) {
+    BigInteger nano = toNano(grams);
     return formatNanoValue(nano);
   }
 
@@ -1182,8 +1182,8 @@ public class Utils {
     return formatUsdtValue(toUsdt(usdt));
   }
 
-  public static String formatCoins(BigDecimal toncoins, int scale) {
-    BigInteger nano = toNano(toncoins);
+  public static String formatCoins(BigDecimal grams, int scale) {
+    BigInteger nano = toNano(grams);
     return formatNanoValue(nano, scale);
   }
 
@@ -1191,8 +1191,8 @@ public class Utils {
     return formatUsdtValue(toUsdt(usdt), scale);
   }
 
-  public static String formatCoins(String toncoins, int scale) {
-    BigInteger nano = toNano(toncoins);
+  public static String formatCoins(String grams, int scale) {
+    BigInteger nano = toNano(grams);
     return formatNanoValue(nano, scale);
   }
 
@@ -1200,39 +1200,39 @@ public class Utils {
     return formatUsdtValue(toUsdt(usdt), scale);
   }
 
-  public static String formatNanoValue(String nanoCoins) {
-    checkToncoinsOverflow(new BigInteger(nanoCoins));
+  public static String formatNanoValue(String nanograms) {
+    checkGramsOverflow(new BigInteger(nanograms));
     return String.format(
         "%,.9f",
-        new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
+        new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
   }
 
   public static String formatUsdtValue(String usdt) {
-    checkToncoinsOverflow(new BigInteger(usdt));
+    checkGramsOverflow(new BigInteger(usdt));
     return String.format(
             "%,.6f",
             new BigDecimal(usdt).divide(BigDecimal.valueOf(MIO1), 6, RoundingMode.HALF_UP));
   }
 
-  public static String formatNanoValue(long nanoCoins) {
-    checkToncoinsOverflow(BigInteger.valueOf(nanoCoins));
+  public static String formatNanoValue(long nanograms) {
+    checkGramsOverflow(BigInteger.valueOf(nanograms));
     return String.format(
         "%,.9f",
-        new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
+        new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
   }
 
   public static String formatUsdtValue(long usdt) {
-    checkToncoinsOverflow(BigInteger.valueOf(usdt));
+    checkGramsOverflow(BigInteger.valueOf(usdt));
     return String.format(
             "%,.6f",
             new BigDecimal(usdt).divide(BigDecimal.valueOf(MIO1), 5, RoundingMode.HALF_UP));
   }
 
-  public static String formatNanoValue(BigInteger nanoCoins) {
-    checkToncoinsOverflow(nanoCoins);
+  public static String formatNanoValue(BigInteger nanograms) {
+    checkGramsOverflow(nanograms);
     return String.format(
         "%,.9f",
-        new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
+        new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
   }
 
   public static String formatUsdtValue(BigInteger usdt) {
@@ -1241,25 +1241,25 @@ public class Utils {
             new BigDecimal(usdt).divide(BigDecimal.valueOf(MIO1), 6, RoundingMode.HALF_UP));
   }
 
-  public static String formatNanoValueStripZeros(BigInteger nanoCoins) {
-    checkToncoinsOverflow(nanoCoins);
-    return new BigDecimal(nanoCoins)
+  public static String formatNanoValueStripZeros(BigInteger nanograms) {
+    checkGramsOverflow(nanograms);
+    return new BigDecimal(nanograms)
         .divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP)
         .stripTrailingZeros()
         .toPlainString();
   }
 
-  public static String formatNanoValueZero(BigInteger nanoCoins) {
-    if (isNull(nanoCoins)) {
+  public static String formatNanoValueZero(BigInteger nanograms) {
+    if (isNull(nanograms)) {
       return "";
     }
-    checkToncoinsOverflow(nanoCoins);
-    if (nanoCoins.compareTo(BigInteger.ZERO) == 0) {
+    checkGramsOverflow(nanograms);
+    if (nanograms.compareTo(BigInteger.ZERO) == 0) {
       return "0";
     } else {
       return String.format(
           "%,.9f",
-          new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
+          new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP));
     }
   }
 
@@ -1276,15 +1276,15 @@ public class Utils {
     }
   }
 
-  public static String formatNanoValueZeroStripZeros(BigInteger nanoCoins) {
-    if (isNull(nanoCoins)) {
+  public static String formatNanoValueZeroStripZeros(BigInteger nanograms) {
+    if (isNull(nanograms)) {
       return "";
     }
-    checkToncoinsOverflow(nanoCoins);
-    if (nanoCoins.compareTo(BigInteger.ZERO) == 0) {
+    checkGramsOverflow(nanograms);
+    if (nanograms.compareTo(BigInteger.ZERO) == 0) {
       return "0";
     } else {
-      return new BigDecimal(nanoCoins)
+      return new BigDecimal(nanograms)
           .divide(BigDecimal.valueOf(BLN1), 9, RoundingMode.HALF_UP)
           .stripTrailingZeros()
           .toPlainString();
@@ -1305,18 +1305,18 @@ public class Utils {
     }
   }
 
-  public static String formatNanoValue(String nanoCoins, int scale) {
-    checkToncoinsOverflow(new BigInteger(nanoCoins));
+  public static String formatNanoValue(String nanograms, int scale) {
+    checkGramsOverflow(new BigInteger(nanograms));
     return String.format(
         "%,." + scale + "f",
-        new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), scale, RoundingMode.HALF_UP));
+        new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), scale, RoundingMode.HALF_UP));
   }
 
-  public static String formatNanoValue(String nanoCoins, int scale, RoundingMode roundingMode) {
-    checkToncoinsOverflow(new BigInteger(nanoCoins));
+  public static String formatNanoValue(String nanograms, int scale, RoundingMode roundingMode) {
+    checkGramsOverflow(new BigInteger(nanograms));
     return String.format(
         "%,." + scale + "f",
-        new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), scale, roundingMode));
+        new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), scale, roundingMode));
   }
 
   public static String formatJettonValue(String jettons, int decimals, int scale) {
@@ -1335,11 +1335,11 @@ public class Utils {
         RoundingMode.HALF_UP);
   }
 
-  public static String formatNanoValue(BigInteger nanoCoins, int scale) {
-    checkToncoinsOverflow(nanoCoins);
+  public static String formatNanoValue(BigInteger nanograms, int scale) {
+    checkGramsOverflow(nanograms);
     return String.format(
         "%,." + scale + "f",
-        new BigDecimal(nanoCoins).divide(BigDecimal.valueOf(BLN1), scale, RoundingMode.HALF_UP));
+        new BigDecimal(nanograms).divide(BigDecimal.valueOf(BLN1), scale, RoundingMode.HALF_UP));
   }
 
   public static String formatUsdtValue(BigInteger usdt, int scale) {
@@ -1448,7 +1448,7 @@ public class Utils {
     return x & 0x00ff;
   }
 
-  private static void checkToncoinsOverflow(BigInteger amount) {
+  private static void checkGramsOverflow(BigInteger amount) {
     int bytesSize = (int) Math.ceil((amount.bitLength() / (double) 8));
     if (bytesSize >= 16) {
       throw new Error("Value is too big. Maximum value 2^120-1");

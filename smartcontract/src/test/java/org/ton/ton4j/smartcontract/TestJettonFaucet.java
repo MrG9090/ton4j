@@ -61,12 +61,12 @@ public class TestJettonFaucet {
 
     RawAccountState state = tonlib.getRawAccountState(Address.of(FAUCET_MASTER_ADDRESS));
 
-    log.info("TEST FAUCET BALANCE IN TONCOINS {}", Utils.formatNanoValue(state.getBalance(), 2));
+    log.info("TEST FAUCET BALANCE IN GRAMS {}", Utils.formatNanoValue(state.getBalance(), 2));
     log.info(
         "TEST FAUCET BALANCE TOTAL SUPPLY: {}",
         Utils.formatJettonValue(jettonMinterWallet.getTotalSupply(), 2, 2));
     log.info(
-        "TEST FAUCET ADMIN BALANCE in TONCOINS: {}",
+        "TEST FAUCET ADMIN BALANCE in GRAMS: {}",
         Utils.formatNanoValue(adminWallet.getBalance()));
     log.info(
         "TEST FAUCET ADMIN BALANCE in JETTONS: {}",

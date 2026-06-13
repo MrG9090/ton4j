@@ -1,7 +1,6 @@
 package org.ton.ton4j.smartcontract.highload;
 
 import static java.util.Objects.isNull;
-import static java.util.Objects.nonNull;
 
 import com.iwebpp.crypto.TweetNaclFast;
 import java.math.BigInteger;
@@ -10,17 +9,17 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
+import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.AccessLevel;
 import org.apache.commons.lang3.StringUtils;
 import org.ton.ton4j.address.Address;
 import org.ton.ton4j.adnl.AdnlLiteClient;
 import org.ton.ton4j.cell.Cell;
 import org.ton.ton4j.cell.CellBuilder;
+import org.ton.ton4j.provider.SendResponse;
 import org.ton.ton4j.provider.TonProvider;
 import org.ton.ton4j.smartcontract.SendMode;
-import org.ton.ton4j.provider.SendResponse;
 import org.ton.ton4j.smartcontract.types.*;
 import org.ton.ton4j.smartcontract.types.Destination;
 import org.ton.ton4j.smartcontract.wallet.Contract;
@@ -276,7 +275,7 @@ public class HighloadWalletV3 implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to destination address and waits till message found among
+   * Sends number of nanograms to destination address and waits till a message found among
    * account's transactions
    */
   public Transaction sendWithConfirmation(HighloadV3Config highloadConfig) throws Exception {

@@ -1066,7 +1066,7 @@ public class TestWalletV5 extends CommonTest {
     log.info("pub-key {}", Utils.bytesToHex(walletV5.getKeyPair().getPublicKey()));
     log.info("prv-key {}", Utils.bytesToHex(walletV5.getKeyPair().getSecretKey()));
 
-    // top up wallet-v5 with some toncoins before deployment
+    // top up wallet-v5 with some grams before deployment
     BigInteger balance =
         TestnetFaucet.topUpContract(tonlib, Address.of(nonBounceableAddress), Utils.toNano(0.1));
     log.info("new wallet {} balance: {}", walletV5.getName(), Utils.formatNanoValue(balance));
@@ -1172,7 +1172,7 @@ public class TestWalletV5 extends CommonTest {
     log.info("pub-key {}", Utils.bytesToHex(walletV5.getKeyPair().getPublicKey()));
     log.info("prv-key {}", Utils.bytesToHex(walletV5.getKeyPair().getSecretKey()));
 
-    // top up wallet-v5 with some toncoins before deployment
+    // top up wallet-v5 with some grams before deployment
     BigInteger balance =
         TestnetFaucet.topUpContract(
             adnlLiteClient, Address.of(nonBounceableAddress), Utils.toNano(0.1));

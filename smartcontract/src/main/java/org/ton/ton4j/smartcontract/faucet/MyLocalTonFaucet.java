@@ -91,7 +91,7 @@ public class MyLocalTonFaucet {
             Utils.formatNanoValue(faucetBalance));
         if (faucetBalance.compareTo(amount) < 0) {
           throw new Error(
-              "MyLocalTon faucet does not have that much toncoins. Faucet balance "
+              "MyLocalTon faucet does not have enough grams. Faucet balance "
                   + Utils.formatNanoValue(faucetBalance)
                   + ", requested "
                   + Utils.formatNanoValue(amount));
@@ -157,7 +157,7 @@ public class MyLocalTonFaucet {
             Utils.formatNanoValue(faucetBalance));
         if (faucetBalance.compareTo(amount) < 0) {
           throw new Error(
-              "MyLocalTon faucet does not have that much toncoins. Faucet balance "
+              "MyLocalTon faucet does not have enough grams. Faucet balance "
                   + Utils.formatNanoValue(faucetBalance)
                   + ", requested "
                   + Utils.formatNanoValue(amount));
@@ -208,7 +208,7 @@ public class MyLocalTonFaucet {
             Utils.formatNanoValue(faucetBalance));
         if (faucetBalance.compareTo(amount) < 0) {
           throw new Error(
-              "MyLocalTon faucet does not have that much toncoins. Faucet balance "
+              "MyLocalTon faucet does not have enough grams. Faucet balance "
                   + Utils.formatNanoValue(faucetBalance)
                   + ", requested "
                   + Utils.formatNanoValue(amount));

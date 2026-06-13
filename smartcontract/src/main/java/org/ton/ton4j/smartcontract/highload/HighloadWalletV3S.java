@@ -379,7 +379,7 @@ public class HighloadWalletV3S implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to destination address and waits till message found among
+   * Sends amount of nanograms to destination address and waits till message found among
    * account's transactions
    */
   public Transaction sendWithConfirmation(HighloadV3Config highloadConfig) throws Exception {

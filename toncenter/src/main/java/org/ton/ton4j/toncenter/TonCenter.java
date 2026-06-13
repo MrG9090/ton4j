@@ -1110,7 +1110,7 @@ public class TonCenter implements TonProvider {
 
   /**
    * Checks every 2 seconds for timeoutSeconds if account balance was changed. Notice, storage fee
-   * changes often by 1 nanocoin with few seconds, if you need to tolerate that consider using
+   * changes often by 1 nanogram with few seconds, if you need to tolerate that consider using
    * waitForBalanceChangeWithTolerance().
    */
   public void waitForBalanceChange(Address wallet, int timeoutSeconds) {

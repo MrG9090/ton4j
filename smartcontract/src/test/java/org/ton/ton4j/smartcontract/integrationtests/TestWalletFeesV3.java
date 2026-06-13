@@ -27,8 +27,8 @@ import org.ton.ton4j.utils.Utils;
 public class TestWalletFeesV3 extends CommonTest {
 
   /**
-   * Trying to send amount of toncoins so that recipient gets the exact amount. There might be a
-   * mistake of several nano coins if transaction lasts too long.
+   * Trying to send amount of grams so that recipient gets the exact amount. There might be a
+   * mistake of several nanograms if transaction lasts too long.
    */
   @Test
   public void testWalletFeesV3() throws InterruptedException {
@@ -137,8 +137,8 @@ public class TestWalletFeesV3 extends CommonTest {
   }
 
   /**
-   * Trying to send amount of toncoins so that recipient gets the exact amount. There might be a
-   * mistake of several nano coins if transaction lasts too long.
+   * Trying to send amount of grams so that recipient gets the exact amount. There might be a
+   * mistake of several nanograms if transaction lasts too long.
    */
   @Test
   public void testWithDeployedWalletsAB() {

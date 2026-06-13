@@ -1965,7 +1965,7 @@ public class AdnlLiteClient implements TonProvider {
   }
 
   public void waitForBalanceChangeWithTolerance(
-      Address address, int timeoutSeconds, BigInteger tolerateNanoCoins) {
+      Address address, int timeoutSeconds, BigInteger tolerateNanograms) {
 
     BigInteger initialBalance = getBalance(address);
     long diff;
@@ -1974,7 +1974,7 @@ public class AdnlLiteClient implements TonProvider {
       if (++i >= timeoutSeconds) {
         throw new Error(
             "Balance was not changed by +/- "
-                + Utils.formatNanoValue(tolerateNanoCoins)
+                + Utils.formatNanoValue(tolerateNanograms)
                 + " within specified timeout.");
       }
       Utils.sleepMs(200);
@@ -1983,7 +1983,7 @@ public class AdnlLiteClient implements TonProvider {
       diff =
           Math.max(currentBalance.longValue(), initialBalance.longValue())
               - Math.min(currentBalance.longValue(), initialBalance.longValue());
-    } while (diff < tolerateNanoCoins.longValue());
+    } while (diff < tolerateNanograms.longValue());
   }
 
   /**

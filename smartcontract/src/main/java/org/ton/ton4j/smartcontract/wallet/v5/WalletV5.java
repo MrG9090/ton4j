@@ -237,7 +237,7 @@ public class WalletV5 implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to the destination address and waits till a message found among
+   * Sends amount of nanograms to the destination address and waits till a message found among
    * account's transactions
    */
   public Transaction sendWithConfirmation(WalletV5Config config) throws Exception {

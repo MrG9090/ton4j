@@ -89,14 +89,14 @@ public class TestTonSdkTestCasesCellDeserialization {
         gson.fromJson(testCase.getExpectedOutput().get("cell5_bytes").toString(), byte[].class);
     Address expectedAddressCell3 = CellSlice.beginParse(cell3).loadAddress();
     Cell cell2InsideCell3 = CellSlice.beginParse(cell3).loadRef();
-    BigInteger expectedToncoinsCell4 = CellSlice.beginParse(cell4).loadCoins();
+    BigInteger expectedGramsCell4 = CellSlice.beginParse(cell4).loadCoins();
     Cell cell3InsideCell4 = CellSlice.beginParse(cell4).loadRef();
 
     assertThat(CellSlice.beginParse(cell1).loadBit()).isEqualTo(expectedCell1Bits);
     assertThat(CellSlice.beginParse(cell3).loadAddress()).isEqualTo(expectedAddressCell3);
     assertThat(CellSlice.beginParse(cell3InsideCell4).loadAddress())
         .isEqualTo(expectedAddressCell3);
-    assertThat(CellSlice.beginParse(cell4).loadCoins()).isEqualTo(expectedToncoinsCell4);
+    assertThat(CellSlice.beginParse(cell4).loadCoins()).isEqualTo(expectedGramsCell4);
 
     assertThat(CellSlice.beginParse(cell2).loadBytes(8)).isEqualTo(expectedCell2Bytes);
     assertThat(CellSlice.beginParse(cell2InsideCell3).loadBytes(8)).isEqualTo(expectedCell2Bytes);

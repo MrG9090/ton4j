@@ -227,7 +227,7 @@ public class TestWalletV2R1Short extends CommonTest {
     log.info("sendResponse {}", sendResponse);
     contract.waitForDeployment(120);
 
-    // send toncoins
+    // send grams
     WalletV2R1Config config =
         WalletV2R1Config.builder()
             .seqno(1)
@@ -269,7 +269,7 @@ public class TestWalletV2R1Short extends CommonTest {
     log.info("sendResponse {}", sendResponse);
     contract.waitForDeployment();
 
-    // send toncoins
+    // send grams
     WalletV2R1Config config =
         WalletV2R1Config.builder()
             .seqno(1)
@@ -318,7 +318,7 @@ public class TestWalletV2R1Short extends CommonTest {
 
     contract.waitForDeployment();
 
-    // send toncoins
+    // send grams
     WalletV2R1Config config =
         WalletV2R1Config.builder()
             .seqno(1)

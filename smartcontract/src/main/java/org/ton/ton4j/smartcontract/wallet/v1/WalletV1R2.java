@@ -173,7 +173,7 @@ public class WalletV1R2 implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to destination address using specified seqno
+   * Sends amount of nanograms to destination address using specified seqno
    *
    * @param config WalletV1R2Config
    */
@@ -182,7 +182,7 @@ public class WalletV1R2 implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to destination address and waits till a message found among
+   * Sends amount of nanograms to destination address and waits till a message found among
    * account's transactions
    */
   public Transaction sendWithConfirmation(WalletV1R2Config config) throws Exception {

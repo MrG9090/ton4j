@@ -858,7 +858,7 @@ public class LiteClientParser {
                 LiteClientAddress destinationAddr =
                         LiteClientAddress.builder().wc(destWc).addr(destAddr).build();
 
-                Value toncoins = readValue(sbb(message, "value:(currencies"));
+                Value grams = readValue(sbb(message, "value:(currencies"));
 
                 BigDecimal ihrFee = parseBigDecimalBracket(sbb(message, "ihr_fee:("), VALUE_COLON);
                 BigDecimal fwdFee = parseBigDecimalBracket(sbb(message, "fwd_fee:("), VALUE_COLON);
@@ -881,7 +881,7 @@ public class LiteClientParser {
                                 .ihrDisabled(ihrDisabled)
                                 .bounce(bounce)
                                 .bounced(bounced)
-                                .value(toncoins)
+                                .value(grams)
                                 .ihrFee(ihrFee)
                                 .fwdFee(fwdFee)
                                 .importFee(importFee)
@@ -1185,7 +1185,7 @@ public class LiteClientParser {
     }
 
     private static Value readValue(String str) {
-        if (StringUtils.isEmpty(str)) return Value.builder().toncoins(BigDecimal.ZERO).build();
+        if (StringUtils.isEmpty(str)) return Value.builder().grams(BigDecimal.ZERO).build();
 
         String res = sbb(str, "amount:(");
         BigDecimal grams = parseBigDecimalBracket(res, VALUE_COLON);
@@ -1218,7 +1218,7 @@ public class LiteClientParser {
             }
         }
 
-        return Value.builder().toncoins(grams).otherCurrencies(otherCurrencies).build();
+        return Value.builder().grams(grams).otherCurrencies(otherCurrencies).build();
     }
 
     private static List<Library> readLibraries(String str) {

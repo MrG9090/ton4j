@@ -106,7 +106,7 @@ public class Transaction implements Serializable {
   public TransactionFees getTransactionFees() {
     Transaction tx = this;
 
-    BigInteger totalFees = tx.totalFees.getToncoins().toBigInteger();
+    BigInteger totalFees = tx.totalFees.getGrams().toBigInteger();
     BigInteger totalForwardFees = getTotalForwardFees(tx);
     BigInteger computeFees = getComputeFees(tx);
 
@@ -129,13 +129,13 @@ public class Transaction implements Serializable {
               ? new BigInteger(inMsg.getBody().getCells().get(0), 16)
               : BigInteger.ONE.negate();
 
-      valueIn = inMsg.getValue().getToncoins().toBigInteger();
+      valueIn = inMsg.getValue().getGrams().toBigInteger();
       inForwardFees = inMsg.getFwdFee().toBigInteger();
     }
 
     for (Message outMsg : tx.getOutMsgs()) {
       if (outMsg.getType().equals("Internal")) {
-        valueOut = valueOut.add(outMsg.getValue().getToncoins().toBigInteger());
+        valueOut = valueOut.add(outMsg.getValue().getGrams().toBigInteger());
       }
     }
 
@@ -218,7 +218,7 @@ public class Transaction implements Serializable {
                         : (op.compareTo(BigInteger.ONE.negate()) != 0)
                             ? op.toString(16)
                             : "no body")
-                .value(inMsg.getValue().getToncoins().toBigInteger())
+                .value(inMsg.getValue().getGrams().toBigInteger())
                 .fwdFee(inMsg.getFwdFee().toBigInteger())
                 .ihrFee(inMsg.getIhrFee().toBigInteger())
                 .createdLt(inMsg.getCreatedLt())
@@ -284,7 +284,7 @@ public class Transaction implements Serializable {
                         : (op.compareTo(BigInteger.ONE.negate()) != 0)
                             ? op.toString(16)
                             : "no body")
-                .value(outMsg.getValue().getToncoins().toBigInteger())
+                .value(outMsg.getValue().getGrams().toBigInteger())
                 .fwdFee(outMsg.getFwdFee().toBigInteger())
                 .ihrFee(outMsg.getIhrFee().toBigInteger())
                 .createdLt(outMsg.getCreatedLt())
@@ -398,16 +398,16 @@ public class Transaction implements Serializable {
         .format(LocalDateTime.ofEpochSecond(timestamp, 0, ZoneOffset.UTC));
   }
 
-  public static String formatNanoValueZero(BigInteger nanoCoins) {
-    if (isNull(nanoCoins)) {
+  public static String formatNanoValueZero(BigInteger nanograms) {
+    if (isNull(nanograms)) {
       return "N/A";
     }
-    if (nanoCoins.compareTo(BigInteger.ZERO) == 0) {
+    if (nanograms.compareTo(BigInteger.ZERO) == 0) {
       return "0";
     } else {
       return String.format(
           "%,.9f",
-          new BigDecimal(nanoCoins)
+          new BigDecimal(nanograms)
               .divide(BigDecimal.valueOf(1_000_000_000), 9, RoundingMode.HALF_UP));
     }
   }

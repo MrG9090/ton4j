@@ -99,7 +99,7 @@ public class TestTonSdkTestCasesCellSerialization {
     String cell1_string = testCase.getInput().get("cell1_string").toString();
     BigInteger cell2_int256 =
         new BigInteger(testCase.getInput().get("cell2_int256").toString(), 16);
-    BigDecimal cell2_toncoins =
+    BigDecimal cell2_grams =
         new BigDecimal(testCase.getInput().get("cell2_toncoins").toString());
     String cell2_address = testCase.getInput().get("cell2_address").toString();
     boolean bocWithCacheBits =
@@ -119,7 +119,7 @@ public class TestTonSdkTestCasesCellSerialization {
     Cell cell2 =
         CellBuilder.beginCell()
             .storeInt(cell2_int256, 256)
-            .storeCoins(Utils.toNano(cell2_toncoins))
+            .storeCoins(Utils.toNano(cell2_grams))
             .storeAddress(Address.of(cell2_address))
             .storeRef(cell1)
             .endCell();
@@ -164,7 +164,7 @@ public class TestTonSdkTestCasesCellSerialization {
     byte[] cell2_bytes =
         gson.fromJson(testCase.getInput().get("cell2_bytes").toString(), byte[].class);
     String cell3_address = testCase.getInput().get("cell3_address").toString(); // null
-    BigDecimal cell4_toncoins =
+    BigDecimal cell4_grams =
         new BigDecimal(testCase.getInput().get("cell4_toncoins").toString());
     byte[] cell5_bytes =
         gson.fromJson(testCase.getInput().get("cell5_bytes").toString(), byte[].class);
@@ -173,7 +173,7 @@ public class TestTonSdkTestCasesCellSerialization {
     Cell c2 = CellBuilder.beginCell().storeBytes(cell2_bytes).storeRef(c1).endCell();
     Cell c3 = CellBuilder.beginCell().storeAddress(null).storeRef(c2).endCell(); // addr_none$00
     Cell c4 =
-        CellBuilder.beginCell().storeCoins(Utils.toNano(cell4_toncoins)).storeRef(c3).endCell();
+        CellBuilder.beginCell().storeCoins(Utils.toNano(cell4_grams)).storeRef(c3).endCell();
 
     Cell cell5 =
         CellBuilder.beginCell()

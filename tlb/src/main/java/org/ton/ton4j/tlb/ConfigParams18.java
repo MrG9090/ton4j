@@ -40,7 +40,9 @@ public class ConfigParams18 implements Serializable {
 
   public static ConfigParams18 deserialize(CellSlice cs) {
     return ConfigParams18.builder()
-        .storagePrices(cs.loadDict(32, k -> k.readUint(32), v -> StoragePrices.deserialize(cs)))
+        .storagePrices(
+            cs.loadDict(
+                32, k -> k.readUint(32), v -> StoragePrices.deserialize(CellSlice.beginParse(v))))
         .build();
   }
 }

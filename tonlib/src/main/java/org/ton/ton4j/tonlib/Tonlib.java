@@ -2201,7 +2201,7 @@ public class Tonlib implements TonProvider {
   }
 
   public void waitForBalanceChangeWithTolerance(
-      Address address, int timeoutSeconds, BigInteger tolerateNanoCoins) {
+      Address address, int timeoutSeconds, BigInteger tolerateNanograms) {
 
     BigInteger initialBalance = getAccountBalance(address);
     long diff;
@@ -2210,7 +2210,7 @@ public class Tonlib implements TonProvider {
       if (++i >= timeoutSeconds) {
         throw new Error(
             "Balance was not changed by +/- "
-                + Utils.formatNanoValue(tolerateNanoCoins)
+                + Utils.formatNanoValue(tolerateNanograms)
                 + " within specified timeout.");
       }
       Utils.sleep(1);
@@ -2219,7 +2219,7 @@ public class Tonlib implements TonProvider {
       diff =
           Math.max(currentBalance.longValue(), initialBalance.longValue())
               - Math.min(currentBalance.longValue(), initialBalance.longValue());
-    } while (diff < tolerateNanoCoins.longValue());
+    } while (diff < tolerateNanograms.longValue());
   }
 
   public void updateInitBlock() {

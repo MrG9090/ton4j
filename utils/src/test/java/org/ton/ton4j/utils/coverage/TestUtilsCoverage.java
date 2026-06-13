@@ -1254,7 +1254,7 @@ public class TestUtilsCoverage {
 
   @Test
   public void testFormatCoinsStringAndScale() {
-    // formatCoins(String) delegates to formatNanoValue on toNano(String), so no grouping of nanocoins
+    // formatCoins(String) delegates to formatNanoValue on toNano(String), so no grouping of nanograms
     assertThat(Utils.formatCoins("1.5")).isEqualTo("1.500000000");
     assertThat(Utils.formatCoins("1.5", 2)).isEqualTo("1.50");
   }

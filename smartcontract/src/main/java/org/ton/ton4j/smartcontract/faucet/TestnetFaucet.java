@@ -75,7 +75,7 @@ public class TestnetFaucet {
             Utils.formatNanoValue(faucetBalance));
         if (faucetBalance.compareTo(amount) < 0) {
           throw new Error(
-              "Testnet faucet does not have that much toncoins. Faucet balance "
+              "Testnet faucet does not have enough grams. Faucet balance "
                   + Utils.formatNanoValue(faucetBalance)
                   + ", requested "
                   + Utils.formatNanoValue(amount));
@@ -130,7 +130,7 @@ public class TestnetFaucet {
             Utils.formatNanoValue(faucetBalance));
         if (faucetBalance.compareTo(amount) < 0) {
           throw new Error(
-              "Testnet faucet does not have that much toncoins. Faucet balance "
+              "Testnet faucet does not have enough grams. Faucet balance "
                   + Utils.formatNanoValue(faucetBalance)
                   + ", requested "
                   + Utils.formatNanoValue(amount));
@@ -192,7 +192,7 @@ public class TestnetFaucet {
             Utils.formatNanoValue(faucetBalance));
         if (faucetBalance.compareTo(amount) < 0) {
           throw new Error(
-              "Testnet faucet does not have that much toncoins. Faucet balance "
+              "Testnet faucet does not have enough grams. Faucet balance "
                   + Utils.formatNanoValue(faucetBalance)
                   + ", requested "
                   + Utils.formatNanoValue(amount));

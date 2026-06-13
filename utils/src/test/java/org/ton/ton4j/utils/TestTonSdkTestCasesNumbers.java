@@ -63,11 +63,11 @@ public class TestTonSdkTestCasesNumbers {
 
         log.info("TestCase: {}", testCase);
 
-        BigInteger toncoinsA = Utils.toNano(testCase.getInput().get("toncoinsA").toString());
-        BigInteger toncoinsB = Utils.toNano(testCase.getInput().get("toncoinsB").toString());
-        BigInteger toncoinsC = Utils.toNano(testCase.getInput().get("toncoinsC").toString());
+        BigInteger gramsA = Utils.toNano(testCase.getInput().get("toncoinsA").toString());
+        BigInteger gramsB = Utils.toNano(testCase.getInput().get("toncoinsB").toString());
+        BigInteger gramsC = Utils.toNano(testCase.getInput().get("toncoinsC").toString());
 
-        BigInteger sum = toncoinsA.add(toncoinsB).add(toncoinsC);
+        BigInteger sum = gramsA.add(gramsB).add(gramsC);
         log.info("sum {}", sum);
         String sumRounded = Utils.formatNanoValue(sum, 2);
         BigDecimal sumRoundedBigDec = new BigDecimal(Utils.formatCoins(sumRounded, 2));
@@ -88,17 +88,17 @@ public class TestTonSdkTestCasesNumbers {
 
         log.info("TestCase: {}", testCase);
 
-        BigInteger toncoinsValueA = Utils.toNano(testCase.getInput().get("toncoinsValueA").toString());
-        BigInteger toncoinsValueB = Utils.toNano(testCase.getInput().get("toncoinsValueB").toString());
+        BigInteger gramsValueA = Utils.toNano(testCase.getInput().get("toncoinsValueA").toString());
+        BigInteger gramsValueB = Utils.toNano(testCase.getInput().get("toncoinsValueB").toString());
 
-        log.info("toncoinsValueA {}", toncoinsValueA);
-        log.info("toncoinsValueB {}", toncoinsValueB);
+        log.info("gramsValueA {}", gramsValueA);
+        log.info("gramsValueB {}", gramsValueB);
 
         BigInteger nanoValueA = new BigInteger(testCase.getExpectedOutput().get("nanoValueA").toString());
         BigInteger nanoValueB = new BigInteger(testCase.getExpectedOutput().get("nanoValueB").toString());
 
-        assertThat(toncoinsValueA).isEqualTo(nanoValueA);
-        assertThat(toncoinsValueB).isEqualTo(nanoValueB);
+        assertThat(gramsValueA).isEqualTo(nanoValueA);
+        assertThat(gramsValueB).isEqualTo(nanoValueB);
     }
 
     @Test
@@ -109,12 +109,12 @@ public class TestTonSdkTestCasesNumbers {
 
         log.info("TestCase: {}", testCase);
 
-        BigInteger nanoCoins = new BigInteger(testCase.getInput().get("nanoValue").toString());
+        BigInteger nanograms = new BigInteger(testCase.getInput().get("nanoValue").toString());
 
-        log.info("nanoCoinsValue {}", nanoCoins);
+        log.info("nanogramsValue {}", nanograms);
 
         String expectedStr = (String) testCase.getExpectedOutput().get("toncoins");
-        assertThat(Utils.fromNano(nanoCoins)).isEqualTo(expectedStr);
+        assertThat(Utils.fromNano(nanograms)).isEqualTo(expectedStr);
     }
 
     @Test(expected = Error.class)

@@ -10,8 +10,43 @@ import java.util.List;
 
 @Builder
 @ToString
-@Getter
 public class Value implements Serializable {
-    BigDecimal toncoins;
+    BigDecimal grams;
+    @Getter
     private List<Currency> otherCurrencies;
+
+    public BigDecimal getGrams() {
+        return grams;
+    }
+
+    public void setGrams(BigDecimal grams) {
+        this.grams = grams;
+    }
+
+    /**
+     * @deprecated use {@link #getGrams()} instead.
+     */
+    @Deprecated
+    public BigDecimal getToncoins() {
+        return getGrams();
+    }
+
+    /**
+     * @deprecated use {@link #setGrams(BigDecimal)} instead.
+     */
+    @Deprecated
+    public void setToncoins(BigDecimal grams) {
+        setGrams(grams);
+    }
+
+    public static class ValueBuilder {
+        /**
+         * @deprecated use {@link #grams(BigDecimal)} instead.
+         */
+        @Deprecated
+        public ValueBuilder toncoins(BigDecimal grams) {
+            this.grams = grams;
+            return this;
+        }
+    }
 }

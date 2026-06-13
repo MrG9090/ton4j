@@ -123,7 +123,7 @@ public class TestWalletV1R1 extends CommonTest {
     log.info("extMessageInfo {}", sendResponse);
     contract.waitForDeployment();
 
-    // send toncoins
+    // send grams
     WalletV1R1Config config =
         WalletV1R1Config.builder()
             .seqno(1)

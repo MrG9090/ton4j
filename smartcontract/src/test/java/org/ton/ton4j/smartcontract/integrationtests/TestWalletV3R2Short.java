@@ -397,7 +397,7 @@ public class TestWalletV3R2Short extends CommonTest {
     contract.deploy(signedDeployBodyHash);
     contract.waitForDeployment();
 
-    // send toncoins
+    // send grams
     WalletV3Config config =
         WalletV3Config.builder()
             .walletId(42)

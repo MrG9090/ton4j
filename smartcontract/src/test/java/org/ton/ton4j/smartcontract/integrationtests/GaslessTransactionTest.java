@@ -193,7 +193,7 @@ public class GaslessTransactionTest {
     assertThat(isTxSuccess).isEqualTo(true);
 
     BigInteger balanceOfDestinationWallet = tonlib.getAccountBalance(RECIPIENT);
-    log.info("balanceOfDestinationWallet in toncoins: {}", balanceOfDestinationWallet);
+    log.info("balanceOfDestinationWallet in grams: {}", balanceOfDestinationWallet);
 
     JettonWalletStableCoin dstJettonWallet = usdtMasterWallet.getJettonWallet(RECIPIENT);
     BigInteger dstJettonWalletBalance = dstJettonWallet.getBalance();

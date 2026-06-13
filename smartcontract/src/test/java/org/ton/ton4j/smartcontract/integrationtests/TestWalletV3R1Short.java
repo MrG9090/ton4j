@@ -43,7 +43,7 @@ public class TestWalletV3R1Short extends CommonTest {
     SendResponse sendResponse = contract.deploy();
     log.info(sendResponse.toString());
     contract.waitForDeployment();
-    // send toncoins
+    // send grams
     WalletV3Config config =
         WalletV3Config.builder()
             .walletId(42)
@@ -84,7 +84,7 @@ public class TestWalletV3R1Short extends CommonTest {
     log.info("sendResponse {}", sendResponse);
     contract.waitForDeployment();
 
-    // send toncoins
+    // send grams
     WalletV3Config config =
         WalletV3Config.builder()
             .walletId(42)
@@ -122,7 +122,7 @@ public class TestWalletV3R1Short extends CommonTest {
     SendResponse sendResponse = contract.deploy();
     log.info("sendResponse {}", sendResponse);
     contract.waitForDeployment();
-    // send toncoins
+    // send grams
     WalletV3Config config =
         WalletV3Config.builder()
             .walletId(42)
@@ -161,7 +161,7 @@ public class TestWalletV3R1Short extends CommonTest {
 
     contract.waitForDeployment();
 
-    // send toncoins
+    // send grams
     WalletV3Config config =
         WalletV3Config.builder()
             .walletId(42)

@@ -80,8 +80,8 @@ You can use each submodule individually. Click the module below to get more deta
 - [Smart contract address](#smart-contract-address)
 - [Wallets](#Wallets)
     - [Create](#create-wallet)
-    - [Transfer](#transfer-toncoins-in-testnet)
-    - [Deploy and transfer with externally signed](#deploy-and-transfer-toncoins-signed-externally)
+    - [Transfer](#transfer-grams-in-testnet)
+    - [Deploy and transfer with externally signed](#deploy-and-transfer-grams-signed-externally)
     - [Transfer to up to 4 recipients](#Transfer-to-up-to-4-recipients)
     - [Transfer to up to 1000 recipients](#Transfer-to-up-to-1000-recipients)
     - [Transfer to up to 1000 recipients using Secp256k1 and externally signed](#Transfer-to-up-to-1000-recipients-using-Secp256k1-and-externally-signed)
@@ -497,14 +497,14 @@ TweetNaclFast.Signature.KeyPair keyPair = Utils.generateSignatureKeyPair();
 TonProvider adnlLiteClient = AdnlLiteClient.builder().mainnet().build();
 WalletV3R2 contract = WalletV3R2.builder().tonProvider(adnlLiteClient).keyPair(keyPair).walletId(42).build();
 
-// to deploy a wallet, you have to top it up with some toncoins first
+// to deploy a wallet, you have to top it up with some grams first
 String nonBounceableAddress = contract.getAddress().toNonBounceable();
 
-// now send some toncoins to nonBounceableAddress, normally up to 0.1 toncoins is enough, then deploy the wallet
+// now send some grams to nonBounceableAddress, normally up to 0.1 grams is enough, then deploy the wallet
 contract.deploy();
 ```
 
-### Transfer toncoins in Testnet
+### Transfer grams in Testnet
 
 ```java
 // generate keypair, create TonProvider and define wallet 
@@ -512,11 +512,11 @@ TweetNaclFast.Signature.KeyPair keyPair = Utils.generateSignatureKeyPair();
 TonProvider adnlLiteClient = AdnlLiteClient.builder().testnet().build();
 WalletV3R2 contract = WalletV3R2.builder().tonProvider(adnlLiteClient).keyPair(keyPair).walletId(42).build();
 
-// to deploy a wallet, you have to top it up with some toncoins first
+// to deploy a wallet, you have to top it up with some grams first
 String nonBounceableAddress = contract.getAddress().toNonBounceable();
 log.info("non-bounceable address: {}", nonBounceableAddress);
 
-// in testnet you can use a helper method that uses Testnet Faucet to top up the address with test toncoins
+// in testnet you can use a helper method that uses Testnet Faucet to top up the address with test grams
 TestnetFaucet.topUpContract(adnlLiteClient, Address.of(nonBounceableAddress), Utils.toNano(1));
 
 // send deploy message
@@ -528,7 +528,7 @@ contract.waitForDeployment();
 // check if wallet is deployed
 log.info("deployed: {}", contract.isDeployed());
 
-// send toncoins
+// send grams
 WalletV3Config config =
   WalletV3Config.builder()
     .walletId(42)
@@ -542,7 +542,7 @@ WalletV3Config config =
 contract.send(config);
 ```
 
-### Deploy and transfer toncoins signed externally
+### Deploy and transfer grams signed externally
 
 ```java
 TonProvider adnlLiteClient = AdnlLiteClient.builder().testnet().build();
@@ -566,7 +566,7 @@ byte[] signedDeployBodyHash = Utils.signData(keyPair.getPublicKey(), keyPair.get
 contract.deploy(signedDeployBodyHash);
 contract.waitForDeployment();
 
-// send toncoins
+// send grams
 WalletV3Config config =
   WalletV3Config.builder()
     .walletId(42)
@@ -586,9 +586,9 @@ log.info("sendResponse: {}", sendResponse);
 
 ### Transfer to up to 4 recipients
 
-In TON there are [several ways](smartcontract/README-WALLETS.md) how to transfer toncoins to multiple users.
+In TON there are [several ways](smartcontract/README-WALLETS.md) how to transfer grams to multiple users.
 
-You can use WalletV2R2 to send toncoins to up to four recipients
+You can use WalletV2R2 to send grams to up to four recipients
 
 ```java
 TweetNaclFast.Signature.KeyPair keyPair = Utils.generateSignatureKeyPair();
@@ -636,7 +636,7 @@ Refer to [this](smartcontract/src/main/java/org/ton/ton4j/smartcontract/wallet/v
 
 ### Transfer to up to 1000 recipients
 
-To send toncoins or custom payloads to more than 4 recipients, use Highload Wallet V3.
+To send grams or custom payloads to more than 4 recipients, use Highload Wallet V3.
 
 ```java
 TweetNaclFast.Signature.KeyPair keyPair = Utils.generateSignatureKeyPair();
@@ -754,11 +754,11 @@ TweetNaclFast.Signature.KeyPair keyPair = Utils.generateSignatureKeyPair();
 AdnlLiteClient adnlLiteClient =  AdnlLiteClient.builder().testnet().build();
 WalletV3R2 contract =  WalletV3R2.builder().tonProvider(adnlLiteClient).keyPair(keyPair).walletId(42).build();
 
-// to deploy a wallet, you have to top it up with some toncoins first
+// to deploy a wallet, you have to top it up with some grams first
 String nonBounceableAddress = contract.getAddress().toNonBounceable();
 log.info("non-bounceable address: {}", nonBounceableAddress);
 
-// in testnet you can use a helper method that uses Testnet Faucet to top up the address with test toncoins
+// in testnet you can use a helper method that uses Testnet Faucet to top up the address with test grams
 TestnetFaucet.topUpContract(adnlLiteClient, Address.of(nonBounceableAddress), Utils.toNano(1));
 
 // deploy the wallet
@@ -767,7 +767,7 @@ contract.deploy();
 // check if wallet is deployed
 contract.isDeployed();
 
-//send toncoins
+//send grams
 WalletV3Config config =
   WalletV3Config.builder()
     .walletId(42)
@@ -777,7 +777,7 @@ WalletV3Config config =
     .body(CellBuilder.beginCell().storeUint(2, 2).endCell()) // custom payload
     .build();
 
-// transfer toncoins from a new wallet (back to faucet)
+// transfer grams from a new wallet (back to faucet)
 contract.send(config);
 ```
 
@@ -813,7 +813,7 @@ log.info("deploying wallet");
 wallet.waitForDeployment();
 log.info("deployed");
 
-// send toncoins
+// send grams
 WalletV3Config config =
   WalletV3Config.builder()
     .walletId(42)

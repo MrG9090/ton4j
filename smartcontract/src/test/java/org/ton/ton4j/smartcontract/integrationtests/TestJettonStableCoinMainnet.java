@@ -114,7 +114,7 @@ public class TestJettonStableCoinMainnet {
 
     BigInteger balanceOfDestinationWallet =
         adnlLiteClient.getBalance(randomDestinationWallet.getAddress());
-    log.info("balanceOfDestinationWallet in toncoins: {}", balanceOfDestinationWallet);
+    log.info("balanceOfDestinationWallet in grams: {}", balanceOfDestinationWallet);
     assertThat(balanceOfDestinationWallet).isEqualTo(BigInteger.ONE);
 
     JettonWalletStableCoin randomJettonWallet =
@@ -211,7 +211,7 @@ public class TestJettonStableCoinMainnet {
 
     BigInteger balanceOfDestinationWallet =
         adnlLiteClient.getBalance(randomDestinationWallet.getAddress());
-    log.info("balanceOfDestinationWallet in toncoins: {}", balanceOfDestinationWallet);
+    log.info("balanceOfDestinationWallet in grams: {}", balanceOfDestinationWallet);
 
     JettonWalletStableCoin randomJettonWallet =
         usdtMasterWallet.getJettonWallet(randomDestinationWallet.getAddress());
@@ -312,7 +312,7 @@ public class TestJettonStableCoinMainnet {
 
     BigInteger balanceOfDestinationWallet =
         adnlLiteClient.getBalance(randomDestinationWallet.getAddress());
-    log.info("balanceOfDestinationWallet in toncoins: {}", balanceOfDestinationWallet);
+    log.info("balanceOfDestinationWallet in grams: {}", balanceOfDestinationWallet);
 
     JettonWalletStableCoin randomJettonWallet =
         usdtMasterWallet.getJettonWallet(randomDestinationWallet.getAddress());

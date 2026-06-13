@@ -166,7 +166,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Long validUntil = (Long) testCase.getInput().get("validUntil");
@@ -186,7 +186,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(walletId)
             .seqno(seqno)
             .destination(Address.of(destinationAddress))
-            .amount(Utils.toNano(amountTonCoins))
+            .amount(Utils.toNano(amountGrams))
             .validUntil(validUntil)
             .bounce(bounceFlag)
             .sendMode(SendMode.valueOfInt(Math.toIntExact(sendMode)))
@@ -212,7 +212,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Long validUntil = (Long) testCase.getInput().get("validUntil");
@@ -232,7 +232,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(walletId)
             .seqno(seqno)
             .destination(Address.of(destinationAddress))
-            .amount(Utils.toNano(amountTonCoins))
+            .amount(Utils.toNano(amountGrams))
             .validUntil(validUntil)
             .bounce(bounceFlag)
             .sendMode(SendMode.valueOfInt(Math.toIntExact(sendMode)))
@@ -257,7 +257,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Long validUntil = (Long) testCase.getInput().get("validUntil");
@@ -278,7 +278,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(walletId)
             .seqno(seqno)
             .destination(Address.of(destinationAddress))
-            .amount(Utils.toNano(amountTonCoins))
+            .amount(Utils.toNano(amountGrams))
             .validUntil(validUntil)
             .bounce(bounceFlag)
             .sendMode(SendMode.valueOfInt(Math.toIntExact(sendMode)))
@@ -395,7 +395,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Long validUntil = (Long) testCase.getInput().get("validUntil");
@@ -415,7 +415,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(walletId)
             .seqno(seqno)
             .destination(Address.of(destinationAddress))
-            .amount(Utils.toNano(amountTonCoins))
+            .amount(Utils.toNano(amountGrams))
             .validUntil(validUntil)
             .bounce(bounceFlag)
             .sendMode(SendMode.valueOfInt(Math.toIntExact(sendMode)))
@@ -440,7 +440,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Long validUntil = (Long) testCase.getInput().get("validUntil");
@@ -460,7 +460,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(walletId)
             .seqno(seqno)
             .destination(Address.of(destinationAddress))
-            .amount(Utils.toNano(amountTonCoins))
+            .amount(Utils.toNano(amountGrams))
             .validUntil(validUntil)
             .bounce(bounceFlag)
             .sendMode(SendMode.valueOfInt(Math.toIntExact(sendMode)))
@@ -485,7 +485,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Long validUntil = (Long) testCase.getInput().get("validUntil");
@@ -506,7 +506,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(walletId)
             .seqno(seqno)
             .destination(Address.of(destinationAddress))
-            .amount(Utils.toNano(amountTonCoins))
+            .amount(Utils.toNano(amountGrams))
             .validUntil(validUntil)
             .bounce(bounceFlag)
             .sendMode(SendMode.valueOfInt(Math.toIntExact(sendMode)))
@@ -532,7 +532,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Long validUntil = (Long) testCase.getInput().get("validUntil");
@@ -553,7 +553,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(walletId)
             .seqno(seqno)
             .destination(Address.of(destinationAddress))
-            .amount(Utils.toNano(amountTonCoins))
+            .amount(Utils.toNano(amountGrams))
             .validUntil(validUntil)
             .bounce(bounceFlag)
             .sendMode(SendMode.valueOfInt(Math.toIntExact(sendMode)))
@@ -576,11 +576,11 @@ public class TestTonSdkTestCasesSmartContracts {
 
     String usdtMasterContractAddress =
         testCase.getInput().get("usdtMasterContractAddress").toString();
-    BigDecimal amountToncoinsToJettonWallet =
+    BigDecimal amountGramsToJettonWallet =
         new BigDecimal(testCase.getInput().get("amountToncoinsToJettonWallet").toString());
     BigInteger amountNanoUsdt =
         new BigInteger(testCase.getInput().get("amountNanoUsdt").toString());
-    BigInteger forwardAmountNanocoins =
+    BigInteger forwardAmountNanograms =
         new BigInteger(testCase.getInput().get("forwardAmountNanocoins").toString());
     String forwardComment = testCase.getInput().get("forwardComment").toString();
 
@@ -649,14 +649,14 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(42)
             .seqno(myWallet.getSeqno())
             .destination(myJettonWallet.getAddress())
-            .amount(Utils.toNano(amountToncoinsToJettonWallet))
+            .amount(Utils.toNano(amountGramsToJettonWallet))
             .body(
                 JettonWalletStableCoin.createTransferBody(
                     0,
                     amountNanoUsdt, // jettons to send
                     randomDestinationWallet.getAddress(), // recipient
                     null, // response address
-                    forwardAmountNanocoins, // forward amount
+                    forwardAmountNanograms, // forward amount
                     MsgUtils.createTextMessageBody(forwardComment)))
             .build();
     SendResponse sendResponse = myWallet.send(walletV3Config);
@@ -665,7 +665,7 @@ public class TestTonSdkTestCasesSmartContracts {
     Utils.sleep(
         9, "transferring 0.02 USDT jettons to wallet " + randomDestinationWallet.getAddress());
 
-    BigInteger expectedBalanceOfNanocoinsAtRandomAddress =
+    BigInteger expectedBalanceOfNanogramsAtRandomAddress =
         new BigInteger(
             testCase.getExpectedOutput().get("balanceOfNanocoinsAtRandomAddress").toString());
     BigInteger expectedBalanceOfJettonsAtRandomAddress =
@@ -674,7 +674,7 @@ public class TestTonSdkTestCasesSmartContracts {
 
     BigInteger balanceOfDestinationWallet =
         tonlib.getAccountBalance(randomDestinationWallet.getAddress());
-    log.info("balanceOfDestinationWallet in toncoins: {}", balanceOfDestinationWallet);
+    log.info("balanceOfDestinationWallet in grams: {}", balanceOfDestinationWallet);
 
     JettonWalletStableCoin randomJettonWallet =
         usdtMasterWallet.getJettonWallet(randomDestinationWallet.getAddress());
@@ -683,7 +683,7 @@ public class TestTonSdkTestCasesSmartContracts {
         "balanceOfJettonWallet in jettons: {}",
         Utils.formatJettonValue(balanceOfJettonWallet, 6, 2));
 
-    assertThat(balanceOfDestinationWallet).isEqualTo(expectedBalanceOfNanocoinsAtRandomAddress);
+    assertThat(balanceOfDestinationWallet).isEqualTo(expectedBalanceOfNanogramsAtRandomAddress);
     assertThat(balanceOfJettonWallet).isEqualTo(expectedBalanceOfJettonsAtRandomAddress);
   }
 
@@ -700,11 +700,11 @@ public class TestTonSdkTestCasesSmartContracts {
 
     String usdtMasterContractAddress =
         testCase.getInput().get("usdtMasterContractAddress").toString();
-    BigDecimal amountToncoinsToJettonWallet =
+    BigDecimal amountGramsToJettonWallet =
         new BigDecimal(testCase.getInput().get("amountToncoinsToJettonWallet").toString());
     BigInteger amountNanoUsdt =
         new BigInteger(testCase.getInput().get("amountNanoUsdt").toString());
-    BigInteger forwardAmountNanocoins =
+    BigInteger forwardAmountNanograms =
         new BigInteger(testCase.getInput().get("forwardAmountNanocoins").toString());
 
     // careful - mainnet
@@ -772,14 +772,14 @@ public class TestTonSdkTestCasesSmartContracts {
             .walletId(42)
             .seqno(myWallet.getSeqno())
             .destination(myJettonWallet.getAddress())
-            .amount(Utils.toNano(amountToncoinsToJettonWallet))
+            .amount(Utils.toNano(amountGramsToJettonWallet))
             .body(
                 JettonWalletStableCoin.createTransferBody(
                     0,
                     amountNanoUsdt, // jettons to send
                     randomDestinationWallet.getAddress(), // recipient
                     null, // response address
-                    forwardAmountNanocoins, // forward amount
+                    forwardAmountNanograms, // forward amount
                     null) // forward payload
                 )
             .build();
@@ -789,7 +789,7 @@ public class TestTonSdkTestCasesSmartContracts {
     Utils.sleep(
         9, "transferring 0.02 USDT jettons to wallet " + randomDestinationWallet.getAddress());
 
-    BigInteger expectedBalanceOfNanocoinsAtRandomAddress =
+    BigInteger expectedBalanceOfNanogramsAtRandomAddress =
         new BigInteger(
             testCase.getExpectedOutput().get("balanceOfNanocoinsAtRandomAddress").toString());
     BigInteger expectedBalanceOfJettonsAtRandomAddress =
@@ -798,7 +798,7 @@ public class TestTonSdkTestCasesSmartContracts {
 
     BigInteger balanceOfDestinationWallet =
         tonlib.getAccountBalance(randomDestinationWallet.getAddress());
-    log.info("balanceOfDestinationWallet in toncoins: {}", balanceOfDestinationWallet);
+    log.info("balanceOfDestinationWallet in grams: {}", balanceOfDestinationWallet);
 
     JettonWalletStableCoin randomJettonWallet =
         usdtMasterWallet.getJettonWallet(randomDestinationWallet.getAddress());
@@ -807,7 +807,7 @@ public class TestTonSdkTestCasesSmartContracts {
         "balanceOfJettonWallet in jettons: {}",
         Utils.formatJettonValue(balanceOfJettonWallet, 6, 2));
 
-    assertThat(balanceOfDestinationWallet).isEqualTo(expectedBalanceOfNanocoinsAtRandomAddress);
+    assertThat(balanceOfDestinationWallet).isEqualTo(expectedBalanceOfNanogramsAtRandomAddress);
     assertThat(balanceOfJettonWallet).isEqualTo(expectedBalanceOfJettonsAtRandomAddress);
   }
 
@@ -839,12 +839,12 @@ public class TestTonSdkTestCasesSmartContracts {
     log.info("pub-key {}", Utils.bytesToHex(contract.getKeyPair().getPublicKey()));
     log.info("prv-key {}", Utils.bytesToHex(contract.getKeyPair().getSecretKey()));
 
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountToncoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     int sendMode = Integer.parseInt(testCase.getInput().get("sendMode").toString());
 
-    BigInteger expectedNanoCoinsAtRandomAddress =
+    BigInteger expectedNanogramsAtRandomAddress =
         new BigInteger(testCase.getExpectedOutput().get("nanocoinsAtRandomAddress").toString());
 
     // top up new wallet using test-faucet-wallet
@@ -872,7 +872,7 @@ public class TestTonSdkTestCasesSmartContracts {
             .body(
                 contract.createSingleTransfer(
                     Address.of(singleRandomAddress),
-                    Utils.toNano(amountTonCoins),
+                    Utils.toNano(amountGrams),
                     bounceFlag,
                     null,
                     CellBuilder.beginCell().endCell()))
@@ -882,12 +882,12 @@ public class TestTonSdkTestCasesSmartContracts {
     sendResponse = contract.send(config);
     assertThat(sendResponse.getCode()).isZero();
 
-    Utils.sleep(60, "sending toncoins...");
+    Utils.sleep(60, "sending grams...");
 
     BigInteger balanceOfDestinationWallet =
         tonlib.getAccountBalance(Address.of(singleRandomAddress));
-    log.info("balanceOfDestinationWallet in nanocoins: {}", balanceOfDestinationWallet);
-    assertThat(balanceOfDestinationWallet).isEqualTo(expectedNanoCoinsAtRandomAddress);
+    log.info("balanceOfDestinationWallet in nanograms: {}", balanceOfDestinationWallet);
+    assertThat(balanceOfDestinationWallet).isEqualTo(expectedNanogramsAtRandomAddress);
   }
 
   @Test
@@ -918,14 +918,14 @@ public class TestTonSdkTestCasesSmartContracts {
     log.info("pub-key {}", Utils.bytesToHex(contract.getKeyPair().getPublicKey()));
     log.info("prv-key {}", Utils.bytesToHex(contract.getKeyPair().getSecretKey()));
 
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountToncoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     int sendMode = Integer.parseInt(testCase.getInput().get("sendMode").toString());
 
     String expectedHighLoadWalletCodeBocAsHexWithCrc =
         testCase.getExpectedOutput().get("highLoadWalletCodeBocAsHexWithCrc").toString();
-    BigInteger expectedTotalSumOfToncoinAtAll50Addresses =
+    BigInteger expectedTotalSumOfGramsAtAll50Addresses =
         new BigInteger(
             testCase.getExpectedOutput().get("totalSumOfToncoinsAt50Addresses").toString());
 
@@ -947,7 +947,7 @@ public class TestTonSdkTestCasesSmartContracts {
     contract.waitForDeployment(60);
 
     List<Destination> dummyDestinations =
-        createDummyDestinations(50, amountTonCoins, bounceFlag, sendMode);
+        createDummyDestinations(50, amountGrams, bounceFlag, sendMode);
     config =
         HighloadV3Config.builder()
             .walletId(42)
@@ -962,7 +962,7 @@ public class TestTonSdkTestCasesSmartContracts {
     sendResponse = contract.send(config);
     AssertionsForClassTypes.assertThat(sendResponse.getCode()).isZero();
 
-    Utils.sleep(120, "sending toncoins...");
+    Utils.sleep(120, "sending grams...");
 
     BigInteger totalSum = BigInteger.ZERO;
     for (Destination destination : dummyDestinations) {
@@ -977,7 +977,7 @@ public class TestTonSdkTestCasesSmartContracts {
         .isEqualTo(expectedHighLoadWalletCodeBocAsHexWithCrc);
     //
     // assertThat(contract.createCodeCell().toHex()).isEqualTo(expectedHighLoadWalletCodeBocAsHexWithCrc);
-    assertThat(totalSum).isEqualTo(expectedTotalSumOfToncoinAtAll50Addresses);
+    assertThat(totalSum).isEqualTo(expectedTotalSumOfGramsAtAll50Addresses);
   }
 
   @Test
@@ -1012,10 +1012,10 @@ public class TestTonSdkTestCasesSmartContracts {
 
     String neojMasterContractAddress =
         testCase.getInput().get("neojFeucetMasterContractAddress").toString();
-    BigDecimal amountToncoinsToJettonWallet =
+    BigDecimal amountGramsToJettonWallet =
         new BigDecimal(testCase.getInput().get("amountToncoinsToJettonWallet").toString());
     BigInteger amountNanoNeoj = new BigInteger(testCase.getInput().get("amountNeoj").toString());
-    BigInteger forwardAmountNanocoins =
+    BigInteger forwardAmountNanograms =
         new BigInteger(testCase.getInput().get("forwardAmountNanocoins").toString());
 
     String forwardComment = testCase.getInput().get("forwardComment").toString();
@@ -1029,7 +1029,7 @@ public class TestTonSdkTestCasesSmartContracts {
     BigInteger balance =
         TestnetFaucet.topUpContract(tonlib, Address.of(nonBounceableAddress), Utils.toNano(1));
     log.info(
-        "new wallet {} toncoins balance: {}",
+        "new wallet {} grams balance: {}",
         highloadWalletV3.getName(),
         Utils.formatNanoValue(balance));
 
@@ -1073,7 +1073,7 @@ public class TestTonSdkTestCasesSmartContracts {
                         Destination.builder()
                             .bounce(bounceFlag)
                             .address(myJettonWallet.getAddress().toBounceable())
-                            .amount(Utils.toNano(amountToncoinsToJettonWallet))
+                            .amount(Utils.toNano(amountGramsToJettonWallet))
                             .body(
                                 JettonWallet.createTransferBody(
                                     0,
@@ -1081,7 +1081,7 @@ public class TestTonSdkTestCasesSmartContracts {
                                     Address.of(singleRandomAddress), // recipient
                                     myJettonWallet.getAddress(), // response address
                                     null, // custom payload
-                                    forwardAmountNanocoins, // forward amount
+                                    forwardAmountNanograms, // forward amount
                                     MsgUtils.createTextMessageBody(
                                         forwardComment) // forward payload
                                     ))
@@ -1129,10 +1129,10 @@ public class TestTonSdkTestCasesSmartContracts {
 
     String neojMasterContractAddress =
         testCase.getInput().get("neojFeucetMasterContractAddress").toString();
-    BigDecimal amountToncoinsToJettonWallet =
+    BigDecimal amountGramsToJettonWallet =
         new BigDecimal(testCase.getInput().get("amountToncoinsToJettonWallet").toString());
     BigInteger amountNanoNeoj = new BigInteger(testCase.getInput().get("amountNeoj").toString());
-    BigInteger forwardAmountNanocoins =
+    BigInteger forwardAmountNanograms =
         new BigInteger(testCase.getInput().get("forwardAmountNanocoins").toString());
 
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
@@ -1146,7 +1146,7 @@ public class TestTonSdkTestCasesSmartContracts {
     BigInteger balance =
         TestnetFaucet.topUpContract(tonlib, Address.of(nonBounceableAddress), Utils.toNano(20));
     log.info(
-        "new wallet {} toncoins balance: {}",
+        "new wallet {} grams balance: {}",
         highloadWalletV3.getName(),
         Utils.formatNanoValue(balance));
 
@@ -1183,9 +1183,9 @@ public class TestTonSdkTestCasesSmartContracts {
         createDummyJettonDestinations(
             300,
             myHighLoadJettonWallet.getAddress(),
-            amountToncoinsToJettonWallet,
+            amountGramsToJettonWallet,
             amountNanoNeoj,
-            forwardAmountNanocoins,
+            forwardAmountNanograms,
             bounceFlag,
             sendMode);
 
@@ -1292,7 +1292,7 @@ public class TestTonSdkTestCasesSmartContracts {
     String destinationAddress = testCase.getInput().get("destinationAddress").toString();
     Long walletId = (Long) testCase.getInput().get("walletId");
     Long seqno = (Long) testCase.getInput().get("seqNo");
-    BigDecimal amountTonCoins =
+    BigDecimal amountGrams =
         new BigDecimal(testCase.getInput().get("amountTonCoins").toString());
     Boolean bounceFlag = (Boolean) testCase.getInput().get("bounceFlag");
     Boolean allowAuthSignature = (Boolean) testCase.getInput().get("allowAuthSignature");
@@ -1325,7 +1325,7 @@ public class TestTonSdkTestCasesSmartContracts {
                             Destination.builder()
                                 .bounce(bounceFlag)
                                 .address(destinationAddress)
-                                .amount(Utils.toNano(amountTonCoins))
+                                .amount(Utils.toNano(amountGrams))
                                 .comment(comment)
                                 .sendMode(SendMode.valueOfInt(sendMode.intValue()))
                                 .build()))
@@ -1361,7 +1361,7 @@ public class TestTonSdkTestCasesSmartContracts {
       Address jettonWallet,
       BigDecimal amount,
       BigInteger amountJettons,
-      BigInteger forwardAmountNanocoins,
+      BigInteger forwardAmountNanograms,
       Boolean bounceFlag,
       int sendMode)
       throws NoSuchAlgorithmException {
@@ -1384,7 +1384,7 @@ public class TestTonSdkTestCasesSmartContracts {
                       addr, // recipient
                       jettonWallet, // response address
                       null, // custom payload
-                      forwardAmountNanocoins, // forward amount
+                      forwardAmountNanograms, // forward amount
                       MsgUtils.createTextMessageBody("test-sdk-" + i) // forward payload
                       ))
               .build());

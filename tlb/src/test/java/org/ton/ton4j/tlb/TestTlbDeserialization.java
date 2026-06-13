@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.ToNumberPolicy;
+import java.math.BigInteger;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.AssertionsForClassTypes;
 import org.junit.Test;
@@ -71,6 +72,34 @@ public class TestTlbDeserialization {
     // CellSlice.beginParse(v).loadRef()
 
     log.info("signers {}", signers1.toString());
+  }
+
+  @Test
+  public void testDeserializeConfigParams18StoragePrices() {
+    TonHashMap storagePrices = new TonHashMap(32);
+    StoragePrices storagePrice =
+        StoragePrices.builder()
+            .utimeSince(1_711_234_567L)
+            .bitPricePs(BigInteger.valueOf(1000))
+            .cellPricePs(BigInteger.valueOf(500_000))
+            .mcBitPricePs(BigInteger.valueOf(2000))
+            .mcCellPricePs(BigInteger.valueOf(1_000_000))
+            .build();
+    storagePrices.elements.put(BigInteger.valueOf(12345), storagePrice);
+
+    ConfigParams18 configParams18 =
+        ConfigParams18.builder().storagePrices(storagePrices).build();
+    ConfigParams18 deserialized =
+        ConfigParams18.deserialize(CellSlice.beginParse(configParams18.toCell()));
+
+    StoragePrices deserializedPrice =
+        (StoragePrices) deserialized.getStoragePrices().elements.get(BigInteger.valueOf(12345));
+    assertThat(deserializedPrice.getMagic()).isEqualTo(0xcc);
+    assertThat(deserializedPrice.getUtimeSince()).isEqualTo(1_711_234_567L);
+    assertThat(deserializedPrice.getBitPricePs()).isEqualTo(BigInteger.valueOf(1000));
+    assertThat(deserializedPrice.getCellPricePs()).isEqualTo(BigInteger.valueOf(500_000));
+    assertThat(deserializedPrice.getMcBitPricePs()).isEqualTo(BigInteger.valueOf(2000));
+    assertThat(deserializedPrice.getMcCellPricePs()).isEqualTo(BigInteger.valueOf(1_000_000));
   }
 
   @Test

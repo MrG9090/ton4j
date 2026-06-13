@@ -104,7 +104,7 @@ Map<String, RawTransactions> txs = tonlib.getAllBlockTransactions(fullblock, 100
 for(Map.Entry<String, RawTransactions> entry:txs.entrySet()) {
     for(RawTransaction tx: ((RawTransactions) entry.getValue()).getTransactions()) {
       if((nonNull(tx.getIn_msg()) && (!tx.getIn_msg().getSource().getAccount_address().equals(""))) {
-        log.info("{} <<<<< {} : {} ", tx.getIn_msg().getSource().getAccount_address(), tx.getIn_msg().getDestination().getAccount_address(), tx.getIn_msg().getValueToncoins(9));
+        log.info("{} <<<<< {} : {} ", tx.getIn_msg().getSource().getAccount_address(), tx.getIn_msg().getDestination().getAccount_address(), tx.getIn_msg().getValueGrams(9));
       }
       if(nonNull(tx.getOut_msgs()) {       
         for(RawMessage msg:tx.getOut_msgs()) {        
@@ -149,7 +149,7 @@ log.info("total txs: {}", rawTransactions.getTransactions().size());
 
 for(RawTransaction tx:rawTransactions.getTransactions()) {
     if((nonNull(tx.getIn_msg()) && (!tx.getIn_msg().getSource().getAccount_address().equals(""))) {
-        log.info("{}, {} <<<<< {} : {} ", Utils.toUTC(tx.getUtime()), tx.getIn_msg().getSource().getAccount_address(), tx.getIn_msg().getDestination().getAccount_address(),tx.getIn_msg().getValueToncoins(9));
+        log.info("{}, {} <<<<< {} : {} ", Utils.toUTC(tx.getUtime()), tx.getIn_msg().getSource().getAccount_address(), tx.getIn_msg().getDestination().getAccount_address(),tx.getIn_msg().getValueGrams(9));
     }
     if(nonNull(tx.getOut_msgs())) {
         for (RawMessage msg:tx.getOut_msgs()) {

@@ -311,7 +311,7 @@ public class MyLocalTonJettonFaucet {
     adminWallet.send(walletV3Config);
     minter.waitForDeployment();
     log.info(
-        "jetton minter deployed, balance {} toncoins", Utils.formatNanoValue(minter.getBalance()));
+        "jetton minter deployed, balance {} grams", Utils.formatNanoValue(minter.getBalance()));
     return minter;
   }
 

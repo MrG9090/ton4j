@@ -93,7 +93,7 @@ public class TestLockupWallet extends CommonTest {
         .isFalse();
 
     // try to transfer coins from new lockup wallet to allowed address (back to faucet)
-    log.info("sending toncoins to allowed address...");
+    log.info("sending grams to allowed address...");
     LockupWalletV1Config config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -112,7 +112,7 @@ public class TestLockupWallet extends CommonTest {
     log.info("new lockup wallet balance: {}", Utils.formatNanoValue(balance));
     assertThat(balance.longValue()).isLessThan(Utils.toNano(4).longValue());
 
-    log.info("sending toncoins to prohibited address 1st time ...");
+    log.info("sending grams to prohibited address 1st time ...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -133,7 +133,7 @@ public class TestLockupWallet extends CommonTest {
     balance = contract.getBalance();
     log.info("new lockup wallet balance: {}", Utils.formatNanoValue(balance));
 
-    log.info("sending toncoins to prohibited address 2nd time ...");
+    log.info("sending grams to prohibited address 2nd time ...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -156,7 +156,7 @@ public class TestLockupWallet extends CommonTest {
 
     assertThat(balance.longValue()).isGreaterThan(Utils.toNano(0.9).longValue());
 
-    log.info("sending toncoins to allowed address...");
+    log.info("sending grams to allowed address...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -302,7 +302,7 @@ public class TestLockupWallet extends CommonTest {
         .isFalse();
 
     // try to transfer coins from the new lockup wallet to the allowed address (back to faucet)
-    log.info("sending toncoins to allowed address...");
+    log.info("sending grams to allowed address...");
     LockupWalletV1Config config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -321,7 +321,7 @@ public class TestLockupWallet extends CommonTest {
     log.info("new lockup wallet balance: {}", Utils.formatNanoValue(balance));
     assertThat(balance.longValue()).isLessThan(Utils.toNano(4).longValue());
 
-    log.info("sending toncoins to prohibited address 1st time ...");
+    log.info("sending grams to prohibited address 1st time ...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -342,7 +342,7 @@ public class TestLockupWallet extends CommonTest {
     balance = contract.getBalance();
     log.info("new lockup wallet balance: {}", Utils.formatNanoValue(balance));
 
-    log.info("sending toncoins to prohibited address 2nd time ...");
+    log.info("sending grams to prohibited address 2nd time ...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -365,7 +365,7 @@ public class TestLockupWallet extends CommonTest {
 
     assertThat(balance.longValue()).isGreaterThan(Utils.toNano(0.9).longValue());
 
-    log.info("sending toncoins to allowed address...");
+    log.info("sending grams to allowed address...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -460,7 +460,7 @@ public class TestLockupWallet extends CommonTest {
         .isFalse();
 
     // try to transfer coins from new lockup wallet to allowed address (back to faucet)
-    log.info("sending toncoins to allowed address...");
+    log.info("sending grams to allowed address...");
     LockupWalletV1Config config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -479,7 +479,7 @@ public class TestLockupWallet extends CommonTest {
     log.info("new lockup wallet balance: {}", Utils.formatNanoValue(balance));
     assertThat(balance.longValue()).isLessThan(Utils.toNano(4).longValue());
 
-    log.info("sending toncoins to prohibited address 1st time ...");
+    log.info("sending grams to prohibited address 1st time ...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -500,7 +500,7 @@ public class TestLockupWallet extends CommonTest {
     balance = contract.getBalance();
     log.info("new lockup wallet balance: {}", Utils.formatNanoValue(balance));
 
-    log.info("sending toncoins to prohibited address 2nd time ...");
+    log.info("sending grams to prohibited address 2nd time ...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())
@@ -523,7 +523,7 @@ public class TestLockupWallet extends CommonTest {
 
     assertThat(balance.longValue()).isGreaterThan(Utils.toNano(0.9).longValue());
 
-    log.info("sending toncoins to allowed address...");
+    log.info("sending grams to allowed address...");
     config =
         LockupWalletV1Config.builder()
             .seqno(contract.getSeqno())

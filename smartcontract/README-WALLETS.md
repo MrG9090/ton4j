@@ -2,7 +2,7 @@
 
 (copied from [tonweb](https://github.com/toncenter/tonweb/blob/master/src/contract/wallet/WalletSources.md))
 
-There is a bunch contracts developed by original TON team for managing TON Coins. Tonweb provide access for most popular ones, here is the way how to rebuild and check them.
+There is a bunch contracts developed by original TON team for managing Grams. Tonweb provide access for most popular ones, here is the way how to rebuild and check them.
 
 ## V1 wallet
 

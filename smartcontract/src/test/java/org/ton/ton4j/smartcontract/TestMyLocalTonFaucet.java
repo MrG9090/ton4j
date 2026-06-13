@@ -37,7 +37,7 @@ public class TestMyLocalTonFaucet {
 
   @Test
   public void testFaucetBalance() {
-    log.info("MyLocalTon faucet balance {} toncoins", Utils.formatNanoValue(MyLocalTonFaucet.getBalance(adnlLiteClient)));
+    log.info("MyLocalTon faucet balance {} grams", Utils.formatNanoValue(MyLocalTonFaucet.getBalance(adnlLiteClient)));
   }
 
   @Test

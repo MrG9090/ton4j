@@ -513,7 +513,7 @@ public class TestExtraCurrency {
           Destination.builder()
               .bounce(false)
               .address(dstDummyAddress)
-              // .amount(Utils.toNano(0)) // send extra-currency only, but you can attach toncoins
+              // .amount(Utils.toNano(0)) // send extra-currency only, but you can attach grams
               // as well
               .extraCurrencies(
                   Collections.singletonList(

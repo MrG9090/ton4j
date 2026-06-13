@@ -48,11 +48,11 @@ public class TestPayments extends CommonTest {
         ChannelInitState.builder()
             .balanceA(
                 Utils.toNano(
-                    1)) // A's initial balance in Toncoins. Next A will need to make a top-up for
+                    1)) // A's initial balance in Grams. Next A will need to make a top-up for
             // this amount
             .balanceB(
                 Utils.toNano(
-                    2)) // B's initial balance in Toncoins. Next B will need to make a top-up for
+                    2)) // B's initial balance in Grams. Next B will need to make a top-up for
             // this amount
             .seqnoA(BigInteger.ZERO)
             .seqnoB(BigInteger.ZERO)
@@ -341,11 +341,11 @@ public class TestPayments extends CommonTest {
         ChannelInitState.builder()
             .balanceA(
                 Utils.toNano(
-                    1)) // A's initial balance in Toncoins. Next A will need to make a top-up for
+                    1)) // A's initial balance in Grams. Next A will need to make a top-up for
             // this amount
             .balanceB(
                 Utils.toNano(
-                    2)) // B's initial balance in Toncoins. Next B will need to make a top-up for
+                    2)) // B's initial balance in Grams. Next B will need to make a top-up for
             // this amount
             .seqnoA(BigInteger.ZERO)
             .seqnoB(BigInteger.ZERO)
@@ -632,11 +632,11 @@ public class TestPayments extends CommonTest {
         ChannelInitState.builder()
             .balanceA(
                 Utils.toNano(
-                    1)) // A's initial balance in Toncoins. Next A will need to make a top-up for
+                    1)) // A's initial balance in Grams. Next A will need to make a top-up for
             // this amount
             .balanceB(
                 Utils.toNano(
-                    2)) // B's initial balance in Toncoins. Next B will need to make a top-up for
+                    2)) // B's initial balance in Grams. Next B will need to make a top-up for
             // this amount
             .seqnoA(BigInteger.ZERO)
             .seqnoB(BigInteger.ZERO)

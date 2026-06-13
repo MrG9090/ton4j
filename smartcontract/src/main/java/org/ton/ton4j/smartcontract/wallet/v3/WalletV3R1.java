@@ -214,7 +214,7 @@ public class WalletV3R1 implements Contract {
   }
 
   /**
-   * Sends amount of nano toncoins to destination address and waits till message found among
+   * Sends amount of nanograms to destination address and waits till message found among
    * account's transactions
    */
   public Transaction sendWithConfirmation(WalletV3Config config) {

@@ -64,7 +64,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     BlockIdExt block = tonlib.getLast().getLast();
     log.info("block {}", block);
@@ -280,7 +280,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("/home/neodix/gitProjects//global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address address = Address.of(TON_FOUNDATION);
 
@@ -395,7 +395,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address addr = Address.of("Ef8-sf_0CQDgwW6kNuNY8mUvRW-MGQ34Evffj8O0Z9Ly1tZ4");
     log.info("address: " + addr.toBounceable());
@@ -415,7 +415,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address addr = Address.of("Ef8-sf_0CQDgwW6kNuNY8mUvRW-MGQ34Evffj8O0Z9Ly1tZ4");
     log.info("address: " + addr.toBounceable());
@@ -451,7 +451,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address address = Address.of(TON_FOUNDATION);
     RunResult result = tonlib.runMethod(address, "seqno");
@@ -467,7 +467,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address address = Address.of(TON_FOUNDATION);
     RunResult result = tonlib.runMethod(address, "seqno", 39047069);
@@ -483,7 +483,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address address = Address.of("EQBYzFXx0QTPW5Lo63ArbNasI_GWRj7NwcAcJR2IWo7_3nTp");
     RunResult result = tonlib.runMethod(address, "get_jetton_data");
@@ -499,7 +499,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address address =
         Address.of("-1:3333333333333333333333333333333333333333333333333333333333333333");
@@ -523,7 +523,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address address =
         Address.of("-1:3333333333333333333333333333333333333333333333333333333333333333");
@@ -539,7 +539,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     AccountAddressOnly address =
         AccountAddressOnly.builder()
@@ -587,7 +587,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            //            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            //            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     RawTransaction tx =
         tonlib.tryLocateTxByIncomingMessage(
@@ -605,7 +605,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     RawTransaction tx =
         tonlib.tryLocateTxByOutcomingMessage(
@@ -624,7 +624,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     FullAccountState accountState1 =
         tonlib.getAccountState(Address.of("EQCtPHFrtkIw3UC2rNfSgVWYT1MiMLDUtgMy2M7j1P_eNMDq"));
@@ -685,7 +685,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     BigInteger arg1 =
         new BigInteger("6aaf20fed58ba5e6db692909e78e5c5c6525e28d1cfa8bd22dc216729b4841b3", 16);
@@ -712,7 +712,7 @@ public class TestTonlibJson {
     Tonlib tonlib =
         Tonlib.builder()
             .pathToTonlibSharedLib(tonlibPath)
-            .pathToGlobalConfig("g:/libs/global-config-archive.json")
+            .pathToGlobalConfig("/home/neodix/gitProjects/global-config-archive.json")
             .build();
     Address smc = Address.of("EQD-BJSVUJviud_Qv7Ymfd3qzXdrmV525e3YDzWQoHIAiInL");
 

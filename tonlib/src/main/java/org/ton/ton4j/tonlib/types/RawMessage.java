@@ -78,4 +78,28 @@ public class RawMessage implements Serializable {
       return "";
     }
   }
+
+  public String getValueGrams() {
+    return Utils.formatNanoValue(value);
+  }
+
+  public String getValueGrams(int scale) {
+    return Utils.formatNanoValue(value, scale);
+  }
+
+  /**
+   * @deprecated use {@link #getValueGrams()} instead.
+   */
+  @Deprecated
+  public String getValueToncoins() {
+    return getValueGrams();
+  }
+
+  /**
+   * @deprecated use {@link #getValueGrams(int)} instead.
+   */
+  @Deprecated
+  public String getValueToncoins(int scale) {
+    return getValueGrams(scale);
+  }
 }

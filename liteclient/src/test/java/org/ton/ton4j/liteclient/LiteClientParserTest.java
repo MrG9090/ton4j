@@ -10,6 +10,7 @@ import org.ton.ton4j.liteclient.api.block.Block;
 import org.ton.ton4j.liteclient.api.block.MintMessage;
 import org.ton.ton4j.liteclient.api.block.RecoverCreateMessage;
 import org.ton.ton4j.liteclient.api.block.Transaction;
+import org.ton.ton4j.liteclient.api.block.Value;
 import org.ton.ton4j.liteclient.exception.IncompleteDump;
 import org.ton.ton4j.liteclient.exception.ParsingError;
 
@@ -29,6 +30,19 @@ public class LiteClientParserTest {
 
     private static final BigInteger BLOCK_SEQNO = new BigInteger("2268701");
     private static final BigDecimal ZERO_LONG = BigDecimal.ZERO;
+
+    @Test
+    public void TestValueGramsAccessors() {
+        Value value = Value.builder().grams(BigDecimal.TEN).build();
+        assertEquals(BigDecimal.TEN, value.getGrams());
+
+        value.setGrams(BigDecimal.ONE);
+        assertEquals(BigDecimal.ONE, value.getGrams());
+
+        Value legacyValue = Value.builder().toncoins(BigDecimal.valueOf(2)).build();
+        assertEquals(BigDecimal.valueOf(2), legacyValue.getGrams());
+        assertEquals(BigDecimal.valueOf(2), legacyValue.getToncoins());
+    }
 
     @Test
     public void TestParseCreateHardFork() throws IOException {
